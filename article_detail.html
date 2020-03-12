@@ -109,11 +109,11 @@
 							</li>
 
 							<li class="dropdown">
-								<a href="product.html" class="dropdown-toggle" data-toggle="dropdown">案例中心</a>
+								<a href="album.html" class="dropdown-toggle" data-toggle="dropdown">案例中心</a>
 								<a href="#" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a>
 								<ul class="dropdown-menu anlizhongxin" role="menu">
 									<li style="display: none;">
-										<a class='' href='product.html'>产品分类2</a>
+										<a class='' href='album.html'>产品分类2</a>
 									</li>
 								
 								</ul>
@@ -211,8 +211,8 @@
                         </div>
                         <ul class="newsList">
                         
-                            <li><a href="article_detail.html" title="微软欲主动送Windows Phone 7设备给黑客破解">微软欲主动送Windows Phone 7设备给黑客破解</a></li>
-                            <li><a href="article_detail.html" title="友盟Android应用数据报告显示国内优质应用非常稀缺">友盟Android应用数据报告显示国内优质应用非常稀缺</a></li>
+                            <!--<li><a href="article_detail.html" title="微软欲主动送Windows Phone 7设备给黑客破解">微软欲主动送Windows Phone 7设备给黑客破解</a></li>
+                            <li><a href="article_detail.html" title="友盟Android应用数据报告显示国内优质应用非常稀缺">友盟Android应用数据报告显示国内优质应用非常稀缺</a></li>-->
                               
                         </ul>
                     </div>
@@ -230,8 +230,8 @@
                     </div>
                     <div class="list">
                         <ul id="firstpane">
-                            <li><a class='firstSelected selected' href='article.html'>公司新闻</a></li>
-                            <li><a class='' href='article.html'>行业资讯</a></li>
+                            <!--<li><a class='firstSelected selected' href='article.html'>公司新闻</a></li>
+                            <li><a class='' href='article.html'>行业资讯</a></li>-->
                         </ul>
                     </div>
                 </div>
@@ -390,7 +390,83 @@
             $("#serviceBox").toggle();
         }
         type()
-        
+        $.ajax({
+				url: '/article-types',
+				type: 'get',
+				data: "articleTypeUpperId=1",
+				async: false,
+				ContentType: 'application/x-www-form-urlencoded',
+				success: function(res) {
+					console.log(res, res.code)
+					if(res.code == 0) {
+						for(var i in res.data.rows) {
+							var id = res.data.rows[i].articleTypeId
+							var name = res.data.rows[i].name
+//							detailList(id, name)
+							if(res.data.rows[i].name == '医疗器械') {
+								$.ajax({
+									url: '/article-types',
+									type: 'get',
+									data: "articleTypeUpperId=" + res.data.rows[i].articleTypeId,
+									async: false,
+									ContentType: 'application/x-www-form-urlencoded',
+									success: function(res) {
+										console.log(res, res.code)
+										if(res.code == 0) {
+											for(var i in res.data.rows) {
+												$('.ylqx').append('<a href="product.html?id='+res.data.rows[i].articleTypeId+'">' + res.data.rows[i].name + '</a>')
+												$('.qxfenlei').append("<li><a class='' href='product.html?id="+res.data.rows[i].articleTypeId+"'>"+res.data.rows[i].name+"</a></li>")
+											}
+										} else {
+											alert(res.codeMsg)
+										}
+									}
+								})
+							} else if(res.data.rows[i].name == '新闻中心') {
+								$.ajax({
+									url: '/article-types',
+									type: 'get',
+									data: "articleTypeUpperId=" + res.data.rows[i].articleTypeId,
+									async: false,
+									ContentType: 'application/x-www-form-urlencoded',
+									success: function(res) {
+										console.log(res, res.code)
+										if(res.code == 0) {
+											$('.xwname').html(res.data.rows[0].name)
+											for(var i in res.data.rows) {
+												
+												$('#firstpane').append("<li><a class='' href='article.html?id="+res.data.rows[i].articleTypeId+"'>" + res.data.rows[i].name + "</a></li>")
+											}
+										} else {
+											alert(res.codeMsg)
+										}
+									}
+								})
+							}else if(res.data.rows[i].name == '案例中心') {
+								$.ajax({
+									url: '/article-types',
+									type: 'get',
+									data: "articleTypeUpperId=" + res.data.rows[i].articleTypeId,
+									async: false,
+									ContentType: 'application/x-www-form-urlencoded',
+									success: function(res) {
+										console.log(res, res.code)
+										if(res.code == 0) {
+											for(var i in res.data.rows) {
+												$('.xwzx').append('<a href="#">' + res.data.rows[i].name + '</a>')
+											}
+										} else {
+											alert(res.codeMsg)
+										}
+									}
+								})
+							}
+						}
+					} else {
+						alert(res.codeMsg)
+					}
+				}
+			})
         function articleDetail(id){
         	$.ajax({
 					url: '/article-'+id,
@@ -403,7 +479,10 @@
 							console.log(res.data.content)
 							$('.detailTitle').html(res.data.name)
 							$('.detailTime').html(getLocalTime(res.data.createTime/1000))	
-							$.ajax({
+							$('.prevBox').html("上一个：<a href='article_detail.html?id="+res.data.prevArticle.articleId+"' title='"+res.data.prevArticle.name+"'>"+res.data.prevArticle.name+"</a>")
+							$('.nextBox').html("下一个：<a href='article_detail.html?id="+res.data.nextArticle.articleId+"' title='"+res.data.nextArticle.name+"'>"+res.data.nextArticle.name+"</a>")
+							if(res.data.content){
+								$.ajax({
 								type:"get",
 								url:res.data.content,
 								async:true,
@@ -412,6 +491,29 @@
 									$('.detailContent').html(res)
 								}
 							});
+							}
+							
+						} else {
+							alert(res.codeMsg)
+						}
+					}
+				})
+        }
+        
+        function relationArticle(id){
+        	$.ajax({
+					url: '/articles',
+					type: 'get',
+					data: "pn=1&ps=2&relatedArticleId=" + id,
+					async: false,
+					ContentType: 'application/x-www-form-urlencoded',
+					success: function(res) {
+						if(res.code == 0) {
+							for(var i in res.data.rows){
+								$('.newsList').append("<li><a href='article_detail.html?id="+res.data.rows[i].articleId+"' title='"+res.data.rows[i].name+"'>"+res.data.rows[i].name+"</a></li>")
+							}
+//							$('.nextBox').html("下一个：<a href='article_detail.html?id="+res.data.nextArticle.articleId+"' title='"+res.data.nextArticle.name+"'>"+res.data.nextArticle.name+"</a>")
+							
 						} else {
 							alert(res.codeMsg)
 						}
@@ -419,8 +521,9 @@
 				})
         }
         if(getQueryVariable('id')){
-        		articleDetail(getQueryVariable('id'))
-        	}
+        	articleDetail(getQueryVariable('id'))
+        	relationArticle(getQueryVariable('id'))
+        }
     </script>
 
 </body>
