@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fl {
+  float: left;
+}
+.box {
+  height: 40px;
+  line-height: 40px;
+  /*position: absolute;*/
+  /*left: 50%;*/
+  /*top: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+  text-align: center;
+    margin-right: 30px;
+    margin-top:20px;
+    margin-bottom: 30px;
+}
+.box button {
+    border-radius: 2px;
+    background: #ffffff;
+    line-height: 32px;
+  padding: 0 10px;
+  margin: 0 10px;
+  height: 32px;
+  float: left;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  /*background-color: #f2f2f2 !important;*/
+}
+.box .first-page,
+.box .last-page {
+  margin: 0;
+}
+.box .pageWrap {
+  height: 32px;
+  float: left;
+  overflow: hidden;
+}
+.box .pageWrap ul {
+  width: 100000px;
+  height: 32px;
+  float: left;
+}
+.box .pageWrap ul li {
+    border-radius: 2px;
+    background: #fff;
+    /*padding: 0 12px;*/
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ebebeb;
+  line-height: 32px;
+  box-sizing: border-box;
+  cursor: pointer;
+  float: left;
+    margin-right: 10px;
+}
+.box .pageWrap ul .sel-page {
+  background-color: #e2403f;
+    color: #ffffff;
+}
+.box .jump-text {
+    border-radius: 2px;
+    border: 0;
+  /*width: 60px;*/
+    width: 48px;
+  height: 32px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 5px;
+  float: left;
+}
+.box .jump-button {
+  margin: 0;
+  float: left;
+}
+.box .total-pages,
+.box .total-count {
+  margin-left: 10px;
+  float: left;
+  font-size: 14px;
+}
+
+
+.zhiti{
+    /*width:14px;*/
+    height:32px;
+    font-size:14px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(0,0,0,0.65);
+    line-height:32px;
+}
+.tiaoshu{
+    width:82px;
+    height:32px;
+    font-size:14px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(0,0,0,0.65);
+    background: #fff;
+    line-height:32px;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+/*#prePage{*/
+    /*background: url("../image/left-1.png") no-repeat 100% 100%;*/
+    /*background-size: 100% 100%;*/
+/*}*/
+/*#prePage:hover{*/
+    /*background: url("../image/left-2.png") no-repeat 100% 100%;*/
+    /*background-size: 100% 100%;*/
+/*}*/
+/*#nextPage{*/
+    /*background: url("../image/right-1.png") no-repeat 100% 100%;*/
+    /*background-size: 100% 100%;*/
+/*}*/
+/*#nextPage:hover{*/
+    /*background: url("../image/right-2.png") no-repeat 100% 100%;*/
+    /*background-size: 100% 100%;*/
+/*}*/

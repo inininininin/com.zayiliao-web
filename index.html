@@ -179,7 +179,7 @@
 						<div class="searchBox">
 							<div class="title">产品查询</div>
 							<input type="text" id="queryTxt" name="queryTxt" placeholder="请输入关键字" onClick="this.value = ''" />
-							<a href="javascript:;" type="button">搜 索</a>
+							<a href="javascript:;" type="button" class="searchThis">搜 索</a>
 						</div>
 						<div class="serviceBtn">
 							<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=413038044&site=qq&menu=yes"> <img src="images/qq.jpg" /><br />客服QQ</a>
@@ -419,8 +419,8 @@
 				</div>
 				<div class="col-xs-12 col-sm-3 col-md-3">
 					<div class="contactBox" style="padding:10px;">
-						<p>联系人：任新伟</p>
-						<p>手机：17372202877</p>
+						<!--<p>联系人：任新伟</p>
+						<p>手机：17372202877</p>-->
 						<p>电话：025-57727172</p>
 						<p>邮箱：413038044@qq.com</p>
 						<p>地址：南京市六合区宁六路606号千人计划研究院C栋6楼</p>
@@ -462,7 +462,8 @@
 					<a href="product.html">产品中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 					<a href="contact.html">联系我们</a>
 				</p>
-				<p class="copyright_p">备案号: 苏ICP备19026634号</p>
+				<p class="showVersion"></p>
+				<p class="copyright_p"><a href="http://www.beian.miit.gov.cn/">备案号: 苏ICP备19026634号</a></p>
 			</div>
 
 		</footer>
@@ -727,7 +728,7 @@ function getLocalTime(nS) {
 										console.log(res, res.code)
 										if(res.code == 0) {
 											for(var i in res.data.rows) {
-												$('.xwzx').append('<a href="#">' + res.data.rows[i].name + '</a>')
+//												$('.xwzx').append('<a href="#">' + res.data.rows[i].name + '</a>')
 												$('.anlizhongxin').append("<li><a class='' href='album.html?id="+res.data.rows[i].articleTypeId+"'>"+res.data.rows[i].name+"</a></li>")
 
 											}
@@ -743,6 +744,12 @@ function getLocalTime(nS) {
 					}
 				}
 			})
+			
+			
+			$('.searchThis').click(function(){
+				location.href='product.html?kw='+$('#queryTxt').val()
+			})
+			
 		</script>
 
 	</body>
