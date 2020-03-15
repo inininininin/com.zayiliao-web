@@ -162,7 +162,8 @@ td{color:#666}
 .newsBox .indexNewsList li .time{font-size:12px;line-height:25px}
 .newsBox .indexNewsList li p{display:block;height:65px;overflow:hidden;font-size:12px;line-height:16px;color:#999;padding-right:5px}
 .newsBox .indexNewsList li .txt{margin-left:130px;background:#fdfdfd;padding-left:10px;height:120px;overflow:hidden;padding-top:5px;}
-.newsBox .indexNewsList li .img{width:120px;height:120px;position:absolute;left:0;background-size:cover;margin-left:10px;margin-right:10px;}
+.newsBox .indexNewsList li .img{width:120px;height:120px;position:absolute;left:0;background-size:contain;margin-left:10px;margin-right:10px;    background-repeat: no-repeat;
+    background-position: center;}
 .newsBox .indexNewsList li:hover{}
 .newsBox .indexNewsList li a{}
 .newsBox .indexNewsList li a:hover .txt{background:#eee; }
