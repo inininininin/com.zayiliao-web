@@ -118,7 +118,7 @@ td{color:#666}
 .productBox .list{clear: both;  padding: 0px 0px 0px 0px;margin-right: -15px;margin-left: -15px;overflow:hidden;}
 .productImg{ min-height: 190px;margin:0px;margin-bottom:20px;}
 .productImg a{position: relative;display: block;width:auto;margin:0px auto 0px auto;}
-.productImg img{margin-right: auto;margin-left: auto;display: block;height:auto; width: 100%;height: auto; margin-bottom: 0px; padding:0px;height: 100%;object-fit:cover}
+.productImg img{margin-right: auto;margin-left: auto;display: block;height:auto; width: 100%;height: auto; margin-bottom: 0px; padding:0px;height: 100%;object-fit:contain;height: 200px;}
 .productImg img:hover{}
 .productTitle{width:100%;display:block;text-align: center;line-height:40px;height:40px;overflow:hidden;color:#333;}
 .productTitle:hover { text-decoration: underline;}
