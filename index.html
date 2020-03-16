@@ -95,7 +95,7 @@
 									<li style="display: none;">
 										<a class='' href='article.html'>公司新闻</a>
 									</li>
-									
+
 								</ul>
 							</li>
 
@@ -106,7 +106,7 @@
 									<li style="display: none;">
 										<a class='' href='product.html'>产品分类2</a>
 									</li>
-								
+
 								</ul>
 							</li>
 
@@ -117,7 +117,7 @@
 									<li style="display: none;">
 										<a class='' href='album.html'>产品分类2</a>
 									</li>
-								
+
 								</ul>
 							</li>
 
@@ -140,12 +140,12 @@
 		<div class="banner homeBanner">
 			<div class="slider">
 				<ul class="slider__wrapper">
-					<li class="slider__item">
+					<!--<li class="slider__item">
 						<a target="_blank" title="" href="" style="background-image:url(images/1.jpg)"><img src="images/banner-1.png" alt="413038044 官方" /></a>
 					</li>
 					<li class="slider__item">
 						<a target="_blank" title="" href="" style="background-image:url(images/2.jpg)"><img src="images/banner-1.png" alt="413038044 官方" /></a>
-					</li>
+					</li>-->
 					<!--<li class="slider__item">
 						<a target="_blank" title="" href="" style="background-image:url(images/1.jpg)"><img src="images/banner-1.png" alt="413038044 官方" /></a>
 					</li>-->
@@ -153,9 +153,7 @@
 			</div>
 		</div>
 
-		<script type="text/javascript">
-			var glide = $('.slider').glide();
-		</script>
+		
 
 		<!-- 内容 -->
 		<div class="container">
@@ -464,7 +462,9 @@
 					<a href="contact.html">联系我们</a>
 				</p>
 				<p class="showVersion"></p>
-				<p class="copyright_p"><a href="http://www.beian.miit.gov.cn/">备案号: 苏ICP备19026634号</a></p>
+				<p class="copyright_p">
+					<a href="http://www.beian.miit.gov.cn/">备案号: 苏ICP备19026634号</a>
+				</p>
 			</div>
 
 		</footer>
@@ -605,9 +605,11 @@
 				$("#mShareBox").hide();
 				$("#serviceBox").toggle();
 			}
-function getLocalTime(nS) {     
-   return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');     
-}
+
+			function getLocalTime(nS) {
+				return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+			}
+
 			function detailList(ids, name) {
 
 				$.ajax({
@@ -621,7 +623,7 @@ function getLocalTime(nS) {
 							if(name == '医疗器械') {
 								for(var i in res.data.rows) {
 									$('.list').append('<div class="col-xs-6 col-sm-3 col-md-2 col-mm-6 productImg">' +
-										'<a title="PRO-001" href="product_detail.html?id='+ res.data.rows[i].articleId +'">' +
+										'<a title="PRO-001" href="product_detail.html?id=' + res.data.rows[i].articleId + '">' +
 										'<span class="imgLink-hover"><span class="hover-link"></span></span>' +
 										'<img src="' + res.data.rows[i].cover + '" alt="' + res.data.rows[i].intro + '" />' +
 										'</a>' +
@@ -635,7 +637,7 @@ function getLocalTime(nS) {
 										'<div class="img" style="background-image: url(' + res.data.rows[i].cover + ')"></div>' +
 										'<div class="txt">' +
 										'<span class="title">' + res.data.rows[i].name + '</span>' +
-										'<span class="time">' + getLocalTime(res.data.rows[i].createTime/1000) + '</span>' +
+										'<span class="time">' + getLocalTime(res.data.rows[i].createTime / 1000) + '</span>' +
 										'<p>' + res.data.rows[i].intro + '</p>' +
 										'</div>' +
 										'</a>' +
@@ -648,25 +650,7 @@ function getLocalTime(nS) {
 					}
 				})
 			}
-			$.ajax({
-				url: '/ads',
-				type: 'get',
-				//				data: "articleTypeUpperId=1",
-				async: false,
-				ContentType: 'application/x-www-form-urlencoded',
-				success: function(res) {
-					console.log(res, res.code)
-					if(res.code == 0) {
-						for(var i in res.data.rows) {
-							//		$('.slider__wrapper').append('<li class="slider__item">' +//images/1.jpg
-							//			'<a target="_blank" title="' + res.data.rows[i].name + '" href="" style="background-image:url('+res.data.rows[i].cover+')"><img src="images/banner-1.png" alt="' + res.data.rows[i].name + '" /></a>' +
-							//			'</li>')
-						}
-					} else {
-						alert(res.codeMsg)
-					}
-				}
-			})
+			ads(1)
 			$.ajax({
 				url: '/article-types',
 				type: 'get',
@@ -691,8 +675,8 @@ function getLocalTime(nS) {
 										console.log(res, res.code)
 										if(res.code == 0) {
 											for(var i in res.data.rows) {
-												$('.ylqx').append('<a href="product.html?id='+res.data.rows[i].articleTypeId+'&keyName='+ encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
-												$('.qxfenlei').append("<li><a class='' href='product.html?id="+res.data.rows[i].articleTypeId+"&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>"+res.data.rows[i].name+"</a></li>")
+												$('.ylqx').append('<a href="product.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+												$('.qxfenlei').append("<li><a class='' href='product.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 											}
 										} else {
 											alert(res.codeMsg)
@@ -710,15 +694,15 @@ function getLocalTime(nS) {
 										console.log(res, res.code)
 										if(res.code == 0) {
 											for(var i in res.data.rows) {
-												$('.xwzx').append('<a href="article.html?id='+res.data.rows[i].articleTypeId+'&keyName='+ encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
-												$('.xwanli').append("<li><a class='' href='article.html?id="+res.data.rows[i].articleTypeId+"&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+												$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+												$('.xwanli').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 											}
 										} else {
 											alert(res.codeMsg)
 										}
 									}
 								})
-							}else if(res.data.rows[i].name == '案例中心') {
+							} else if(res.data.rows[i].name == '案例中心') {
 								$.ajax({
 									url: '/article-types',
 									type: 'get',
@@ -729,8 +713,8 @@ function getLocalTime(nS) {
 										console.log(res, res.code)
 										if(res.code == 0) {
 											for(var i in res.data.rows) {
-//												$('.xwzx').append('<a href="#">' + res.data.rows[i].name + '</a>')
-												$('.anlizhongxin').append("<li><a class='' href='album.html?id="+res.data.rows[i].articleTypeId+"&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>"+res.data.rows[i].name+"</a></li>")
+												//												$('.xwzx').append('<a href="#">' + res.data.rows[i].name + '</a>')
+												$('.anlizhongxin').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 
 											}
 										} else {
@@ -745,14 +729,14 @@ function getLocalTime(nS) {
 					}
 				}
 			})
-			
-			
-			$('.searchThis').click(function(){
-				location.href='product.html?kw='+$('#queryTxt').val()
-			})
-			
-		</script>
 
+			$('.searchThis').click(function() {
+				location.href = 'product.html?kw=' + $('#queryTxt').val()
+			})
+		</script>
+<script type="text/javascript">
+			var glide = $('.slider').glide();
+		</script>
 	</body>
 
 </html>
