@@ -164,7 +164,7 @@
 							<h1>当前位置</h1>
 							<span></span>
 							<a href="index.html">首页</a> >
-							<a href="javascript:;" class="xwname">新闻中心</a>
+							<a href="javascript:;" class="xwname"></a>
 						</div>
 					</div>
 
@@ -498,7 +498,7 @@
 												productAll(res.data.rows[0].articleTypeId)
 												for(var i in res.data.rows) {
 
-													$('#firstpane').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "'>" + res.data.rows[i].name + "</a></li>")
+													$('#firstpane').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 												}
 											} else {
 												alert(res.codeMsg)
@@ -567,7 +567,9 @@
 					detailList(1, getQueryVariable('id'))
 					productAll(getQueryVariable('id'));
 				}
-
+if(getQueryVariable('keyName')){
+				$('.xwname').html(decodeURIComponent(getQueryVariable('keyName')))
+			}
 				type()
 
 				$('#box').paging({

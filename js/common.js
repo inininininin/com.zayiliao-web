@@ -143,8 +143,8 @@ function type() {
 								console.log(res, res.code)
 								if(res.code == 0) {
 									for(var i in res.data.rows) {
-										$('.ylqx').append('<a href="product.html?id=' + res.data.rows[i].articleTypeId + '">' + res.data.rows[i].name + '</a>')
-										$('.qxfenlei').append("<li><a class='' href='product.html?id=" + res.data.rows[i].articleTypeId + "'>" + res.data.rows[i].name + "</a></li>")
+										$('.ylqx').append('<a href="product.html?id=' + res.data.rows[i].articleTypeId + '&keyName='+ encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+										$('.qxfenlei').append("<li><a class='' href='product.html?id=" + res.data.rows[i].articleTypeId + "&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 									}
 								} else {
 									alert(res.codeMsg)
@@ -162,8 +162,8 @@ function type() {
 								console.log(res, res.code)
 								if(res.code == 0) {
 									for(var i in res.data.rows) {
-										$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '">' + res.data.rows[i].name + '</a>')
-										$('.xwanli').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "'>" + res.data.rows[i].name + "</a></li>")
+										$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName='+ encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+										$('.xwanli').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 									}
 								} else {
 									alert(res.codeMsg)
@@ -181,8 +181,8 @@ function type() {
 								console.log(res, res.code)
 								if(res.code == 0) {
 									for(var i in res.data.rows) {
-										$('.xwzx').append('<a href="#">' + res.data.rows[i].name + '</a>')
-										$('.anlizhongxin').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "'>" + res.data.rows[i].name + "</a></li>")
+										$('.xwzx').append('<a href="album.html?id='+res.data.rows[i].articleTypeId+'&keyName='+encodeURIComponent(res.data.rows[i].name)+'">' + res.data.rows[i].name + '</a>')
+										$('.anlizhongxin').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 
 									}
 								} else {

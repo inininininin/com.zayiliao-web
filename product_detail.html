@@ -141,8 +141,8 @@
     <div class="banner">
         <div class="slider">
             <ul class="slider__wrapper">
-                <li class="slider__item"><a target="_blank" title="1" href="" style="background-image:url(images/1.jpg)"><img src="images/banner-3.png" alt="413038044 官方" /></a></li>
-                <li class="slider__item"><a target="_blank" title="2" href="" style="background-image:url(images/2.jpg)"><img src="images/banner-3.png" alt="413038044 官方" /></a></li>
+                <!--<li class="slider__item"><a target="_blank" title="1" href="" style="background-image:url(images/1.jpg)"><img src="images/banner-3.png" alt="413038044 官方" /></a></li>
+                <li class="slider__item"><a target="_blank" title="2" href="" style="background-image:url(images/2.jpg)"><img src="images/banner-3.png" alt="413038044 官方" /></a></li>-->
             </ul>
         </div>
     </div>
@@ -592,6 +592,26 @@
 					}
 				})
 			}
+			$.ajax({
+				url: '/ads',
+				type: 'get',
+				//				data: "articleTypeUpperId=1",
+				async: false,
+				ContentType: 'application/x-www-form-urlencoded',
+				success: function(res) {
+					console.log(res, res.code)
+					if(res.code == 0) {
+						for(var i in res.data.rows) {
+							$('.slider__wrapper').append('<li class="slider__item"><a target="_blank" title="'+res.data.rows[i].name+'" href="" style="background-image:url('+res.data.rows[i].cover+')"><img src="images/banner-3.png" alt="'+res.data.rows[i].name+'" /></a></li>')
+//							$('.slider__wrapper').append("<li data-responsive='' data-src='"+res.data.rows[i].cover+"' data-sub-html='' class='slider__item real'><a><img src='"+res.data.rows[i].cover+"'></a></li>")
+
+						}
+					} else {
+						alert(res.codeMsg)
+					}
+				}
+			})
+			
 			if(getQueryVariable('id')) {
 				articleDetail(getQueryVariable('id'))
 				relationArticle(getQueryVariable('id'))
@@ -642,6 +662,7 @@
     <script src="js/lg-hash.js"></script>
 
     <script src="js/lg-pager.js"></script>
+    <script src="js/jquery.glide.js" type="text/javascript"></script>
 
 </body>
 </html>

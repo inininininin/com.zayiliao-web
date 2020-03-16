@@ -452,7 +452,7 @@
 											for(var i in res.data.rows) {
 //												$('.anlizhongxin').append("<li><a class='' href='product.html?id=" + res.data.rows[i].articleTypeId + "'>" + res.data.rows[i].name + "</a></li>")
 
-												$('#firstpane').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "'>" + res.data.rows[i].name + "</a></li>")
+												$('#firstpane').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 											}
 										} else {
 											alert(res.codeMsg)
@@ -520,6 +520,9 @@ var ids=''
         		detailList(1,getQueryVariable('id'))
         		productAll(getQueryVariable('id'));
         	}
+        	if(getQueryVariable('keyName')){
+				$('.xwname').html(decodeURIComponent(getQueryVariable('keyName')))
+			}
 			type()
 			    $('#box').paging({
 //					kw = $('#searchBox').val();

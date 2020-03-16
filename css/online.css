@@ -56,7 +56,7 @@
 #cmsFloatPanel .qrcodePanel .qrcodePanel-inner .codePanel .codePanel-hd{height:32px;font-family:"微软雅黑";font-size:14px;color:#fff;line-height:32px;text-indent:10px;background:url(cmsfloatqrcodepanel-hd-bg.gif) no-repeat right top;overflow:hidden;}
 #cmsFloatPanel .qrcodePanel .qrcodePanel-inner .codePanel .codePanel-hd a{width:32px;height:32px;font-family:"宋体";font-size:12px;color:#fff;line-height:32px;letter-spacing:1px;text-indent:0;display:block;float:right;overflow: hidden;}
 #cmsFloatPanel .qrcodePanel .qrcodePanel-inner .codePanel .codePanel-hd a span{display:none;}
-#cmsFloatPanel .qrcodePanel .qrcodePanel-inner .codePanel .codePanel-bd{padding:10px;overflow:hidden;}
+#cmsFloatPanel .qrcodePanel .qrcodePanel-inner .codePanel .codePanel-bd{overflow:hidden;}
 #cmsFloatPanel .qrcodePanel .qrcodePanel-inner .codePanel .codePanel-bd img{max-width:200px;border:none;}
 #cmsFloatPanel .qrcodePanel .qrcodePanel-inner .codePanel .codePanel-ft{height:30px;background:#f4f4f4;text-align:center;padding:0 10px;overflow:hidden;}
 #cmsFloatPanel .qrcodePanel .qrcodePanel-inner .codePanel .codePanel-ft a{font-size:12px;color:#666;line-height:30px;letter-spacing:1px;}
