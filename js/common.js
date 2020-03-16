@@ -143,8 +143,8 @@ function type() {
 								console.log(res, res.code)
 								if(res.code == 0) {
 									for(var i in res.data.rows) {
-										$('.ylqx').append('<a href="product.html?id=' + res.data.rows[i].articleTypeId + '&keyName='+ encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
-										$('.qxfenlei').append("<li><a class='' href='product.html?id=" + res.data.rows[i].articleTypeId + "&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+										$('.ylqx').append('<a href="product.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+										$('.qxfenlei').append("<li><a class='' href='product.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 									}
 								} else {
 									alert(res.codeMsg)
@@ -162,8 +162,8 @@ function type() {
 								console.log(res, res.code)
 								if(res.code == 0) {
 									for(var i in res.data.rows) {
-										$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName='+ encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
-										$('.xwanli').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+										$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+										$('.xwanli').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 									}
 								} else {
 									alert(res.codeMsg)
@@ -181,8 +181,8 @@ function type() {
 								console.log(res, res.code)
 								if(res.code == 0) {
 									for(var i in res.data.rows) {
-										$('.xwzx').append('<a href="album.html?id='+res.data.rows[i].articleTypeId+'&keyName='+encodeURIComponent(res.data.rows[i].name)+'">' + res.data.rows[i].name + '</a>')
-										$('.anlizhongxin').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+										$('.xwzx').append('<a href="album.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+										$('.anlizhongxin').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 
 									}
 								} else {
@@ -216,7 +216,7 @@ function getQueryVariable(variable) {
 }
 
 var version = ''
-var	versionIntro = ''
+var versionIntro = ''
 $.ajax({
 	url: '../config.json',
 	type: 'get',
@@ -232,3 +232,32 @@ $.ajax({
 $('.showVersion').click(function() {
 	alert('版本号：' + version + "\n" + '更新：' + versionIntro)
 })
+
+function ads(banner) {
+	$.ajax({
+		url: '/ads',
+		type: 'get',
+		//				data: "articleTypeUpperId=1",
+		async: false,
+		ContentType: 'application/x-www-form-urlencoded',
+		success: function(res) {
+			console.log(res, res.code)
+			if(res.code == 0) {
+				for(var i in res.data.rows) {
+					if(banner == 1) {
+						$('.slider__wrapper').append('<li class="slider__item"><a target="_blank" title="' + res.data.rows[i].name + '" href="" style="background-image:url(' + res.data.rows[i].cover + ')"><img src="images/banner-1.png" alt="' + res.data.rows[i].name + '" /></a></li>')
+
+					} else if(banner == 2) {
+						$('.slider__wrapper').append('<li class="slider__item"><a target="_blank" title="' + res.data.rows[i].name + '" href="" style="background-image:url(' + res.data.rows[i].cover + ')"><img src="images/banner-2.png" alt="' + res.data.rows[i].name + '" /></a></li>')
+
+					} else {
+						$('.slider__wrapper').append('<li class="slider__item"><a target="_blank" title="' + res.data.rows[i].name + '" href="" style="background-image:url(' + res.data.rows[i].cover + ')"><img src="images/banner-3.png" alt="' + res.data.rows[i].name + '" /></a></li>')
+
+					}
+				}
+			} else {
+				alert(res.codeMsg)
+			}
+		}
+	})
+}
