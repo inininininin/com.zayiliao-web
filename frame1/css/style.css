@@ -54,7 +54,7 @@ td{color:#666}
 .searchList li .img img{width:100%;height:auto}
 .searchList li .title{width:auto;float:left;overflow:hidden;display:block}
 
-/*手机版菜单可展开图标*/
+/*电话版菜单可展开图标*/
 #app_menudown{position: absolute; top:0px; right:0px; font-size: 16px;}
 #app_menudown:hover{background-color: #073053;}
 #app_menudown span{display:block}
@@ -267,7 +267,7 @@ footer a:hover{color:#fff}
   .col-mm-1 {width: 8.33333333%;}
   .logo img{max-width:400px;}
 }
-/*屏幕宽度为480px以下，手机版*/
+/*屏幕宽度为480px以下，电话版*/
 @media screen and (max-width: 480px) 
 {
 
@@ -280,7 +280,7 @@ footer a:hover{color:#fff}
 	}
 }
 
-/*屏幕宽度为768px以下，手机版*/
+/*屏幕宽度为768px以下，电话版*/
 @media screen and (max-width: 767px) 
 {
     #rightBox{float:left;}
