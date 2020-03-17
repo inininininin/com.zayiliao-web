@@ -317,7 +317,7 @@ footer a:hover{color:#fff}
 	.about_box section img{margin:10px 15px 0px 0px;max-width: 180px;height:auto;} 
 	.logo{text-align:center;display: none;}
 	.logo img{max-width:300px}
-	footer{ margin-bottom:50px;}
+	/*footer{ margin-bottom:50px;}*/
 	#app_menudown{ display:block; }
 	#cmsFloatPanel{display:none;}
 	.slider__arrows-item {display:none;}
@@ -351,12 +351,12 @@ footer a:hover{color:#fff}
 /*屏幕宽度为768px以上*/
 @media screen and (min-width: 768px) 
 {
-    #navbar{float:left;padding:0px;margin:0px;}
+    #navbar{/*float:left;*/padding:0px;margin:0px;}
 	/*.navbar-nav > li{border-right: 1px solid #ddd;}*/
 	.navbar-nav > li:first-child { border-left:0; }
 	.navbar-nav > li:last-child{  }
 	.navbar-nav > li > a {transition:background 0.4s; text-align: center;}
-	.navbar-default .navbar-nav > li > a{line-height: 50px;padding:0px;min-width:90px;}
+	.navbar-default .navbar-nav > li > a{line-height: 50px;padding:0px;min-width:80px;}
     .navbar-default .navbar-nav > li > .selected {background:#3477c8; color: #fff;}
 
 	.navbar-default .navbar-nav > li > a:hover,
@@ -365,9 +365,9 @@ footer a:hover{color:#fff}
 	.navbar-default .navbar-nav > .active > a:hover,
 	.navbar-default .navbar-nav > .open > a,
 	.navbar-default .navbar-nav > .open > a:hover,
-	.navbar-default .navbar-nav > .open > a:focus {background:#eee; color: #fff;}
+	.navbar-default .navbar-nav > .open > a:focus {background:#eee; color: #333;}
 	.navbar-default .navbar-nav-e > li > a{font-weight: normal; }
-	.navbar .dropdown-menu{background:#fff;border:none;color:#333;padding:0px;border-radius:0px;min-width: 145px;}
+	.navbar .dropdown-menu{background:#fff;border:none;color:#333;padding:0px;border-radius:0px;min-width: 80px;}
 	.navbar .dropdown-menu li a{color:#333;line-height:35px;padding:0px;text-align:center;font-size:12px;}
 	.navbar .dropdown-menu li a:hover{background:#eee;}
 	.navbar .dropdown-menu li ul{display:none;position:absolute;z-index:9999;margin-top:-35px;margin-left:145px;width:145px;background:#3477c8;}
@@ -380,10 +380,10 @@ footer a:hover{color:#fff}
 
 /*屏幕宽度为992px以上*/
 @media screen and (min-width:992px) {
-	.navbar-default .navbar-nav > li > a{min-width:120px;}
+	.navbar-default .navbar-nav > li > a{min-width:80px;}
 }
 
 /*屏幕宽度为1200px以上*/
 @media screen and (min-width:1200px) {
-	.navbar-default .navbar-nav > li > a{min-width:145px; /*padding兼容低版IE*/}
+	.navbar-default .navbar-nav > li > a{min-width:80px; /*padding兼容低版IE*/}
 }
