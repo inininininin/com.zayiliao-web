@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
-		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="applicable-device" content="pc,mobile" />
-		<title>忠安医疗器械有限公司</title>
-
+		<title>忠安医疗 - 终于科技, 天下为安</title>
+		<meta name="keywords" contect="忠安医疗,医疗器械,忠安,南京忠安,南京忠安医疗器械有限公司,忠安医疗器械有限公司,57727172">
+		<meta name="description" content="南京忠安医疗器械有限公司 电话：025-57727172">
 		<link href="css/bootstrap.css" rel="stylesheet" />
 		<link href="css/glide.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
@@ -37,7 +37,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="container">
+				<div class="container" style="display: none;">
 					<div class="row">
 						<div class="col-xs-12 col-sm-6 col-md-8 logo">
 							<a href="index.html"><img src="images/logo.png" alt="413038044 官方" /></a>
@@ -60,16 +60,19 @@
 			<nav class="navbar navbar-static-top navbar-default">
 				<div class="container">
 					<div class="navbar-header">
+						<!--<span style="font-size: 23px;color: #C70C15;font-weight: 600;margin-left: 15px;">忠安医疗</span>-->
+						<img class="phoneLogo" src="images/logoP.png" />
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
-						<a class="navbar-brand" href="index.html"></a>
+                    	</button>
+						<!--<a class="navbar-brand" href="index.html"></a>-->
 					</div>
-					<div id="navbar" class="collapse navbar-collapse">
-						<ul class="nav navbar-nav">
+					<div id="navbar" class="collapse navbar-collapse"  style="position: relative;">
+						<img src="images/logoP.png" style="display: inline-block;width: 178px;float: left;">
+						<ul class="nav navbar-nav" style="float: right;position: absolute;right: 0;bottom: 0;">
 
 							<li>
 								<a href="index.html">网站首页</a>
@@ -95,7 +98,7 @@
 									<li style="display: none;">
 										<a class='' href='article.html'>公司新闻</a>
 									</li>
-									
+
 								</ul>
 							</li>
 
@@ -106,7 +109,7 @@
 									<li style="display: none;">
 										<a class='' href='product.html'>产品分类2</a>
 									</li>
-								
+
 								</ul>
 							</li>
 
@@ -117,7 +120,7 @@
 									<li style="display: none;">
 										<a class='' href='album.html'>产品分类2</a>
 									</li>
-								
+
 								</ul>
 							</li>
 
@@ -140,12 +143,12 @@
 		<div class="banner homeBanner">
 			<div class="slider">
 				<ul class="slider__wrapper">
-					<li class="slider__item">
+					<!--<li class="slider__item">
 						<a target="_blank" title="" href="" style="background-image:url(images/1.jpg)"><img src="images/banner-1.png" alt="413038044 官方" /></a>
 					</li>
 					<li class="slider__item">
 						<a target="_blank" title="" href="" style="background-image:url(images/2.jpg)"><img src="images/banner-1.png" alt="413038044 官方" /></a>
-					</li>
+					</li>-->
 					<!--<li class="slider__item">
 						<a target="_blank" title="" href="" style="background-image:url(images/1.jpg)"><img src="images/banner-1.png" alt="413038044 官方" /></a>
 					</li>-->
@@ -153,15 +156,11 @@
 			</div>
 		</div>
 
-		<script type="text/javascript">
-			var glide = $('.slider').glide();
-		</script>
-
 		<!-- 内容 -->
 		<div class="container">
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-9 col-md-9">
+				<!--<div class="col-xs-12 col-sm-9 col-md-9">
 					<div class="aboutBox">
 						<a href="about.html" class="aboutMore">MORE +</a>
 						<div class="aboutTitle">
@@ -173,9 +172,9 @@
 
 						</section>
 					</div>
-				</div>
+				</div>-->
 
-				<div class="col-xs-12 col-sm-3 col-md-3">
+				<!--<div class="col-xs-12 col-sm-3 col-md-3">
 					<div class="searchGroup">
 						<div class="searchBox">
 							<div class="title">产品查询</div>
@@ -184,11 +183,10 @@
 						</div>
 						<div class="serviceBtn">
 							<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=413038044&site=qq&menu=yes"> <img src="images/qq.jpg" /><br />客服QQ</a>
-							<!--<a target="_blank" href="http://weibo.com/"> <img src="images/wb.jpg" /><br />关注微博</a>-->
 							<a href="javascript:showWechatQR();"> <img src="images/wx.jpg" /><br />关注微信</a>
 						</div>
 					</div>
-				</div>
+				</div>-->
 
 			</div>
 		</div>
@@ -199,7 +197,7 @@
 				<div class="modal-content" style="border: 0px;">
 					<div class="modal-header">请扫描二维码关注我们</div>
 					<div class="modal-body" style="text-align: center">
-						<img src="images/qrcode.jpg" alt="" />
+						<img style="width: 100%;" src="images/qrcode.jpg" alt="" />
 					</div>
 					<div class="modal-footer" style="text-align: center;">
 						<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
@@ -215,7 +213,7 @@
 		</script>
 		<!-- 关注微信模态框（Modal）end -->
 
-		<div style="background:#f9f9f9; padding-top:30px; margin-top:30px; padding-bottom:10px">
+		<div style="background:#f9f9f9; padding-top:30px;  padding-bottom:10px">
 			<div class="container">
 				<div class="row">
 
@@ -308,7 +306,7 @@
 								<h1>导航栏目</h1>
 								<span></span>
 							</div>
-							<div class="list">
+							<!--<div class="list">
 								<ul id="firstpane">
 									<li>
 										<a class='' href='product.html'>产品分类1</a><span>+</span>
@@ -336,7 +334,7 @@
 										<a class='' href='product.html'>产品分类5</a>
 									</li>
 								</ul>
-							</div>
+							</div>-->
 						</div>
 					</div>
 				</div>
@@ -463,6 +461,7 @@
 					<a href="product.html">产品中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 					<a href="contact.html">联系我们</a>
 				</p>
+				
 				<p class="copyright_p">
 					<span style="color: #C0C0C3;">版权所有2017©南京忠安医疗器械有限公司</span>
 					<a href="http://www.beian.miit.gov.cn/">备案号: 苏ICP备19026634号</a>
@@ -474,126 +473,7 @@
 
 		<script type="text/javascript" src="js/common.js"></script>
 
-		<!--客服面板-->
-		<!--电脑版-->
-		<div id="cmsFloatPanel">
-
-			<div class="ctrolPanel">
-				<a class="service" href="#"></a>
-				<!--<a class="message" href="#"></a>-->
-				<a class="qrcode" href="#"></a>
-				<a class="arrow" title="返回顶部" href="#"></a>
-			</div>
-
-			<div class="servicePanel">
-				<div class="servicePanel-inner">
-					<div class="serviceMsgPanel">
-						<div class="serviceMsgPanel-hd">
-							<a href="#"><span>关闭</span></a>
-						</div>
-						<div class="serviceMsgPanel-bd">
-							<!--在线QQ-->
-							<div class="msggroup">
-								<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=413038044&site=qq&menu=yes"><img class="qqimg" src="http://wpa.qq.com/pa?p=2:593036114:52" alt="QQ在线客服" />技术支持</a>
-							</div>
-							<!--在线MSN-->
-							<div class="msggroup">
-								<a href="" target="blank"><img class="qqimg" src="images/msn.jpg" alt="MSN在线客服" /> 官方</a>
-							</div>
-							<!--在线SKYPE-->
-							<div class="msggroup">
-								<a href=""><img class="qqimg" src="images/skype.gif" alt="SKYPE在线客服" /> 官方</a>
-							</div>
-							<!--淘宝旺旺-->
-							<div class="msggroup">
-
-							</div>
-						</div>
-						<div class="serviceMsgPanel-ft"></div>
-					</div>
-					<div class="arrowPanel">
-						<div class="arrow02"></div>
-					</div>
-				</div>
-			</div>
-
-			<div class="messagePanel">
-				<div class="messagePanel-inner">
-					<div class="formPanel">
-
-						<div class="formPanel-bd">
-							<!-- JiaThis Button BEGIN -->
-							<div class="jiathis_style_32x32">
-								<a class="jiathis_button_qzone"></a>
-								<a class="jiathis_button_tsina"></a>
-								<a class="jiathis_button_tqq"></a>
-								<a class="jiathis_button_weixin"></a>
-								<a class="jiathis_button_renren"></a>
-								<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-							</div>
-							<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
-							<!-- JiaThis Button END -->
-							<a type="button" class="btn btn-default btn-xs" href="#" style="margin: 6px 0px 0px 10px;">关闭</a>
-						</div>
-
-					</div>
-					<div class="arrowPanel">
-						<div class="arrow01"></div>
-						<div class="arrow02"></div>
-					</div>
-				</div>
-			</div>
-
-			<div class="qrcodePanel">
-				<div class="qrcodePanel-inner">
-					<div class="codePanel">
-						<div class="codePanel-hd"><span style="float:left">用手机扫描二维码</span>
-							<a href="#"><span>关闭</span></a>
-						</div>
-						<div class="codePanel-bd">
-							<img src="images/qrcode.jpg" alt="二维码" />
-						</div>
-					</div>
-					<div class="arrowPanel">
-						<div class="arrow01"></div>
-						<div class="arrow02"></div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		<div id="serviceBox" style="display:none">
-			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=413038044&site=qq&menu=yes"><img class="qqimg" src="http://wpa.qq.com/pa?p=2:593036114:52" alt="QQ在线客服" />技术支持</a>
-		</div>
-
-		<script type="text/javascript" src="js/online.js"></script>
-
-		<!--电脑版 end-->
-
-		<!--手机版-->
-		<nav class="navbar-default navbar-fixed-bottom footer_nav" style="background:#fafafa;">
-			<div class="foot_nav">
-				<a href="javascript:mShare()"><span class="glyphicon glyphicon-share btn-lg" aria-hidden="true"></span>分享</a>
-			</div>
-			<div class="foot_nav">
-				<a href=""><span class="glyphicon glyphicon-phone btn-lg" aria-hidden="true"></span>电话</a>
-			</div>
-			<div class="foot_nav" id="serviceBtn">
-				<a onClick="showService()"><span class="glyphicon glyphicon glyphicon-headphones btn-lg" aria-hidden="true"></span>客服</a>
-			</div>
-			<div class="foot_nav">
-				<a id="gototop" href="#"><span class="glyphicon glyphicon-circle-arrow-up btn-lg" aria-hidden="true"></span>顶部</a>
-			</div>
-			<div id="mShareBox" style="position: fixed; display: none; z-index: 999; bottom: 47px; width: 100%; height: 45px; background: #fff; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px;">
-				<!-- JiaThis Button BEGIN -->
-				<div class="jiathis_style_m"></div>
-				<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_m.js" charset="utf-8"></script>
-				<!-- JiaThis Button END -->
-			</div>
-		</nav>
-		<!--手机版 end-->
-
+		
 		<script type="text/javascript">
 			function mShare() {
 				$("#mShareBox").toggle();
@@ -608,9 +488,11 @@
 				$("#mShareBox").hide();
 				$("#serviceBox").toggle();
 			}
-function getLocalTime(nS) {     
-   return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');     
-}
+
+			function getLocalTime(nS) {
+				return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+			}
+
 			function detailList(ids, name) {
 
 				$.ajax({
@@ -624,7 +506,7 @@ function getLocalTime(nS) {
 							if(name == '医疗器械') {
 								for(var i in res.data.rows) {
 									$('.list').append('<div class="col-xs-6 col-sm-3 col-md-2 col-mm-6 productImg">' +
-										'<a title="PRO-001" href="product_detail.html?id='+ res.data.rows[i].articleId +'">' +
+										'<a title="PRO-001" href="product_detail.html?id=' + res.data.rows[i].articleId + '">' +
 										'<span class="imgLink-hover"><span class="hover-link"></span></span>' +
 										'<img src="' + res.data.rows[i].cover + '" alt="' + res.data.rows[i].intro + '" />' +
 										'</a>' +
@@ -638,7 +520,7 @@ function getLocalTime(nS) {
 										'<div class="img" style="background-image: url(' + res.data.rows[i].cover + ')"></div>' +
 										'<div class="txt">' +
 										'<span class="title">' + res.data.rows[i].name + '</span>' +
-										'<span class="time">' + getLocalTime(res.data.rows[i].createTime/1000) + '</span>' +
+										'<span class="time">' + getLocalTime(res.data.rows[i].createTime / 1000) + '</span>' +
 										'<p>' + res.data.rows[i].intro + '</p>' +
 										'</div>' +
 										'</a>' +
@@ -651,25 +533,7 @@ function getLocalTime(nS) {
 					}
 				})
 			}
-			$.ajax({
-				url: '/ads',
-				type: 'get',
-				//				data: "articleTypeUpperId=1",
-				async: false,
-				ContentType: 'application/x-www-form-urlencoded',
-				success: function(res) {
-					console.log(res, res.code)
-					if(res.code == 0) {
-						for(var i in res.data.rows) {
-							//		$('.slider__wrapper').append('<li class="slider__item">' +//images/1.jpg
-							//			'<a target="_blank" title="' + res.data.rows[i].name + '" href="" style="background-image:url('+res.data.rows[i].cover+')"><img src="images/banner-1.png" alt="' + res.data.rows[i].name + '" /></a>' +
-							//			'</li>')
-						}
-					} else {
-						alert(res.codeMsg)
-					}
-				}
-			})
+			ads(1)
 			$.ajax({
 				url: '/article-types',
 				type: 'get',
@@ -694,8 +558,8 @@ function getLocalTime(nS) {
 										console.log(res, res.code)
 										if(res.code == 0) {
 											for(var i in res.data.rows) {
-												$('.ylqx').append('<a href="product.html?id='+res.data.rows[i].articleTypeId+'&keyName='+ encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
-												$('.qxfenlei').append("<li><a class='' href='product.html?id="+res.data.rows[i].articleTypeId+"&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>"+res.data.rows[i].name+"</a></li>")
+												$('.ylqx').append('<a href="product.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+												$('.qxfenlei').append("<li><a class='' href='product.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 											}
 										} else {
 											alert(res.codeMsg)
@@ -713,15 +577,15 @@ function getLocalTime(nS) {
 										console.log(res, res.code)
 										if(res.code == 0) {
 											for(var i in res.data.rows) {
-												$('.xwzx').append('<a href="article.html?id='+res.data.rows[i].articleTypeId+'&keyName='+ encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
-												$('.xwanli').append("<li><a class='' href='article.html?id="+res.data.rows[i].articleTypeId+"&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+												$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+												$('.xwanli').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 											}
 										} else {
 											alert(res.codeMsg)
 										}
 									}
 								})
-							}else if(res.data.rows[i].name == '案例中心') {
+							} else if(res.data.rows[i].name == '案例中心') {
 								$.ajax({
 									url: '/article-types',
 									type: 'get',
@@ -732,8 +596,8 @@ function getLocalTime(nS) {
 										console.log(res, res.code)
 										if(res.code == 0) {
 											for(var i in res.data.rows) {
-//												$('.xwzx').append('<a href="#">' + res.data.rows[i].name + '</a>')
-												$('.anlizhongxin').append("<li><a class='' href='album.html?id="+res.data.rows[i].articleTypeId+"&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>"+res.data.rows[i].name+"</a></li>")
+												//												$('.xwzx').append('<a href="#">' + res.data.rows[i].name + '</a>')
+												$('.anlizhongxin').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 
 											}
 										} else {
@@ -748,14 +612,14 @@ function getLocalTime(nS) {
 					}
 				}
 			})
-			
-			
-			$('.searchThis').click(function(){
-				location.href='product.html?kw='+$('#queryTxt').val()
-			})
-			
-		</script>
 
+			$('.searchThis').click(function() {
+				location.href = 'product.html?kw=' + $('#queryTxt').val()
+			})
+		</script>
+		<script type="text/javascript">
+			var glide = $('.slider').glide();
+		</script>
 	</body>
 
 </html>
