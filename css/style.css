@@ -185,7 +185,7 @@ td{color:#666}
 .titleBar .linkList a:hover{color:#3477c8}
 /*导航菜单*/
 .navbar li span{display:none}
-.navbar{ box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);margin:0px;margin-top:0px;  min-height: 50px;  height:50px;border:0px;background: #fff !important;/*background:url(navBg.gif) #f9f9f9;*/border-radius:0px;}
+.navbar{ box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);margin:0px;margin-top:0px;  min-height: 50px;  /*height:50px;*/border:0px;background: #fff !important;/*background:url(navBg.gif) #f9f9f9;*/border-radius:0px;}
 /*翻页组件*/
 .pageBar{width: 100%;overflow: hidden;float: left;padding-top: 0px;margin-bottom: 20px;display: inline;}
 .pageBar .pageList{width: 100%;overflow: hidden;float: left;line-height: 35px;text-align: center;}
