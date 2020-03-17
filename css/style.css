@@ -169,7 +169,7 @@ td{color:#666}
 .newsBox .indexNewsList li a:hover .txt{background:#eee; }
 
 /*首页联系*/
-.contactBox{ margin:30px 0px 0px 0px;background: url(telbg.jpg);background-size:cover;overflow:hidden;/*height:305px;*/}
+.contactBox{ margin:30px 0px 0px 0px;background: url(telbg.jpg);background-size:cover;overflow:hidden;color:#333/*height:305px;*/}
 .contactBox .content{display:block;padding:10px;background:rgba(242,40,40,0.6);color:#fff; min-height:150px;font-size:14px;overflow:hidden;margin-top:80px}
 .contactBox .content *{color:#fff}
 
