@@ -1,5 +1,5 @@
 /* 浮动客服面板 */
-#cmsFloatPanel{overflow:hidden;}
+#cmsFloatPanel{overflow:hidden;display:none;}
 #cmsFloatPanel .ctrolPanel{width:50px;height:150px;background: url(panel-bg.png) no-repeat center bottom;position:fixed;right:0px;top:227px;overflow:hidden;z-index:1001;_position:absolute;_top:expression(eval(documentElement.scrollTop + 200));}
 #cmsFloatPanel .ctrolPanel a{width:50px; height: 50px; font-size:12px;color:#ff3300;text-align:center;overflow:hidden; text-decoration:none;}
 #cmsFloatPanel .ctrolPanel a:hover{background: rgba(255,255,255,0.3);}

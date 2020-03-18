@@ -226,11 +226,11 @@ $.ajax({
 		console.log(res)
 		version = res.version;
 		versionIntro = res.versionIntro;
-		$('.showVersion').html("版本号：" + res.version.split('-')[0])
+		$('.showVersion').html("版本: " + res.version.split('-')[0])
 	}
 })
 $('.showVersion').click(function() {
-	alert('版本号：' + version + "\n" + '更新：' + versionIntro)
+	alert('版本: ' + version + "\n" + '更新: ' + versionIntro)
 })
 
 function ads(banner) {

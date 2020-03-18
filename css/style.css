@@ -54,14 +54,14 @@ td{color:#666}
 .searchList li .img img{width:100%;height:auto}
 .searchList li .title{width:auto;float:left;overflow:hidden;display:block}
 
-/*手机版菜单可展开图标*/
+/*电话版菜单可展开图标*/
 #app_menudown{position: absolute; top:0px; right:0px; font-size: 16px;}
 #app_menudown:hover{background-color: #073053;}
 #app_menudown span{display:block}
 /*菜单栏标志*/
 .navbar-brand{padding:0px;background: #3669aa url(home.png) no-repeat center center;width:50px;}
 .navbar .navbar-brand:hover{background: #3669aa url(home.png) no-repeat center center;}
-.topBox{/*background:url(topLine.jpg) center top repeat-x;*/padding-top:6px;}
+.topBox{/*background:url(topLine.jpg) center top repeat-x;padding-top:6px;*/}
 .welcomeBox{width:auto;float:left;line-height:30px;font-size:12px;}
 .welcomeBox *{padding:0px;margin:0px;border:0px}
 .borderBottom{border-bottom:1px solid #ddd}
@@ -118,7 +118,7 @@ td{color:#666}
 .productBox .list{clear: both;  padding: 0px 0px 0px 0px;margin-right: -15px;margin-left: -15px;overflow:hidden;}
 .productImg{ min-height: 190px;margin:0px;margin-bottom:20px;}
 .productImg a{position: relative;display: block;width:auto;margin:0px auto 0px auto;}
-.productImg img{margin-right: auto;margin-left: auto;display: block;height:auto; width: 100%;height: auto; margin-bottom: 0px; padding:0px;height: 100%;object-fit:cover;height: 200px;}
+.productImg img{margin-right: auto;margin-left: auto;display: block;height:auto; width: 100%;height: auto; margin-bottom: 0px; padding:0px;height: 100%;object-fit:contain;background-color: #ffffff;height: 200px;}
 .productImg img:hover{}
 .productTitle{width:100%;display:block;text-align: center;line-height:40px;height:40px;overflow:hidden;color:#333;}
 .productTitle:hover { text-decoration: underline;}
@@ -162,14 +162,14 @@ td{color:#666}
 .newsBox .indexNewsList li .time{font-size:12px;line-height:25px}
 .newsBox .indexNewsList li p{display:block;height:65px;overflow:hidden;font-size:12px;line-height:16px;color:#999;padding-right:5px}
 .newsBox .indexNewsList li .txt{margin-left:130px;background:#fdfdfd;padding-left:10px;height:120px;overflow:hidden;padding-top:5px;}
-.newsBox .indexNewsList li .img{width:120px;height:120px;position:absolute;left:0;background-size:contain;margin-left:10px;margin-right:10px;    background-repeat: no-repeat;
+.newsBox .indexNewsList li .img{width:120px;height:120px;position:absolute;left:0;background-size:contain;background-color: #F9F9F9;margin-left:10px;margin-right:10px;    background-repeat: no-repeat;
     background-position: center;}
 .newsBox .indexNewsList li:hover{}
 .newsBox .indexNewsList li a{}
 .newsBox .indexNewsList li a:hover .txt{background:#eee; }
 
 /*首页联系*/
-.contactBox{ margin:30px 0px 0px 0px;background: url(telbg.jpg);background-size:cover;overflow:hidden;height:305px;}
+.contactBox{ margin:30px 0px 0px 0px;background: url(telbg.jpg);background-size:cover;overflow:hidden;color:#333/*height:305px;*/}
 .contactBox .content{display:block;padding:10px;background:rgba(242,40,40,0.6);color:#fff; min-height:150px;font-size:14px;overflow:hidden;margin-top:80px}
 .contactBox .content *{color:#fff}
 
@@ -185,7 +185,7 @@ td{color:#666}
 .titleBar .linkList a:hover{color:#3477c8}
 /*导航菜单*/
 .navbar li span{display:none}
-.navbar{ box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);margin:0px;margin-top:0px;  min-height: 50px;  /*height:50px;*/border:0px;background: #fff !important;/*background:url(navBg.gif) #f9f9f9;*/border-radius:0px;}
+.navbar{ box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);margin:0px;margin-top:0px;  min-height: 50px;  height:50px;border:0px;background: #fff !important;/*background:url(navBg.gif) #f9f9f9;*/border-radius:0px;}
 /*翻页组件*/
 .pageBar{width: 100%;overflow: hidden;float: left;padding-top: 0px;margin-bottom: 20px;display: inline;}
 .pageBar .pageList{width: 100%;overflow: hidden;float: left;line-height: 35px;text-align: center;}
@@ -267,7 +267,7 @@ footer a:hover{color:#fff}
   .col-mm-1 {width: 8.33333333%;}
   .logo img{max-width:400px;}
 }
-/*屏幕宽度为480px以下，手机版*/
+/*屏幕宽度为480px以下，电话版*/
 @media screen and (max-width: 480px) 
 {
 
@@ -280,14 +280,14 @@ footer a:hover{color:#fff}
 	}
 }
 
-/*屏幕宽度为768px以下，手机版*/
+/*屏幕宽度为768px以下，电话版*/
 @media screen and (max-width: 767px) 
 {
     #rightBox{float:left;}
 	.navbar{min-height:50px;}
 	.navbar-default .navbar-collapse, .navbar-default .navbar-form{}
 	.phoneLogo{
-		width: 100px;
+		width: 140px;
 		margin-left: 15px;
 	}
 	.navbar-toggle{border:0px}
@@ -317,7 +317,7 @@ footer a:hover{color:#fff}
 	.about_box section img{margin:10px 15px 0px 0px;max-width: 180px;height:auto;} 
 	.logo{text-align:center;display: none;}
 	.logo img{max-width:300px}
-	/*footer{ margin-bottom:50px;}*/
+	footer{ margin-bottom:50px;}
 	#app_menudown{ display:block; }
 	#cmsFloatPanel{display:none;}
 	.slider__arrows-item {display:none;}
@@ -351,12 +351,12 @@ footer a:hover{color:#fff}
 /*屏幕宽度为768px以上*/
 @media screen and (min-width: 768px) 
 {
-    #navbar{/*float:left;*/padding:0px;margin:0px;}
+    #navbar{float:left;padding:0px;margin:0px;}
 	/*.navbar-nav > li{border-right: 1px solid #ddd;}*/
 	.navbar-nav > li:first-child { border-left:0; }
 	.navbar-nav > li:last-child{  }
 	.navbar-nav > li > a {transition:background 0.4s; text-align: center;}
-	.navbar-default .navbar-nav > li > a{line-height: 50px;padding:0px;min-width:80px;}
+	.navbar-default .navbar-nav > li > a{line-height: 50px;padding:0px;min-width:90px;}
     .navbar-default .navbar-nav > li > .selected {background:#3477c8; color: #fff;}
 
 	.navbar-default .navbar-nav > li > a:hover,
@@ -367,7 +367,7 @@ footer a:hover{color:#fff}
 	.navbar-default .navbar-nav > .open > a:hover,
 	.navbar-default .navbar-nav > .open > a:focus {background:#eee; color: #333;}
 	.navbar-default .navbar-nav-e > li > a{font-weight: normal; }
-	.navbar .dropdown-menu{background:#fff;border:none;color:#333;padding:0px;border-radius:0px;min-width: 80px;}
+	.navbar .dropdown-menu{background:#fff;border:none;color:#333;padding:0px;border-radius:0px;min-width: 145px;}
 	.navbar .dropdown-menu li a{color:#333;line-height:35px;padding:0px;text-align:center;font-size:12px;}
 	.navbar .dropdown-menu li a:hover{background:#eee;}
 	.navbar .dropdown-menu li ul{display:none;position:absolute;z-index:9999;margin-top:-35px;margin-left:145px;width:145px;background:#3477c8;}
@@ -380,10 +380,10 @@ footer a:hover{color:#fff}
 
 /*屏幕宽度为992px以上*/
 @media screen and (min-width:992px) {
-	.navbar-default .navbar-nav > li > a{min-width:80px;}
+	.navbar-default .navbar-nav > li > a{min-width:120px;}
 }
 
 /*屏幕宽度为1200px以上*/
 @media screen and (min-width:1200px) {
-	.navbar-default .navbar-nav > li > a{min-width:80px; /*padding兼容低版IE*/}
+	.navbar-default .navbar-nav > li > a{min-width:145px; /*padding兼容低版IE*/}
 }

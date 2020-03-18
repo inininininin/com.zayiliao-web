@@ -1,6 +1,6 @@
 /* 浮动客服面板 */
-#cmsFloatPanel{overflow:hidden;}
-#cmsFloatPanel .ctrolPanel{width:50px;height:200px;background: url(panel-bg.png) no-repeat center bottom;position:fixed;right:0px;top:227px;overflow:hidden;z-index:1001;_position:absolute;_top:expression(eval(documentElement.scrollTop + 200));}
+#cmsFloatPanel{overflow:hidden;display:none;}
+#cmsFloatPanel .ctrolPanel{width:50px;height:150px;background: url(panel-bg.png) no-repeat center bottom;position:fixed;right:0px;top:227px;overflow:hidden;z-index:1001;_position:absolute;_top:expression(eval(documentElement.scrollTop + 200));}
 #cmsFloatPanel .ctrolPanel a{width:50px; height: 50px; font-size:12px;color:#ff3300;text-align:center;overflow:hidden; text-decoration:none;}
 #cmsFloatPanel .ctrolPanel a:hover{background: rgba(255,255,255,0.3);}
 #cmsFloatPanel .ctrolPanel .arrow{line-height:28px;display:block;margin:1px auto;}
@@ -29,7 +29,7 @@
 #cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-bd .msggroup{width:90px;margin:0 15px; padding:4px 0px 4px 0px;}
 #cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-bd .msggroup a{font-size: 12px; color: #000;line-height:23px}
 #cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-bd .msggroup a img{margin-bottom:-4px}
-
+#cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-bd .msggroup:nth-child(2),#cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-bd .msggroup:nth-child(3){display: none;}
 
 #cmsFloatPanel .servicePanel .servicePanel-inner .serviceMsgPanel .serviceMsgPanel-ft{width:110px;height:49px;background:url(kf-bottom.gif) no-repeat left top;overflow:hidden;}
 
@@ -49,7 +49,7 @@
 
 #cmsFloatPanel .qrcodePanel{width:210px;height:240px;position:fixed;right:50px;top:227px;z-index:1001;overflow:visible;display:none;_position:absolute;_top:expression(eval(documentElement.scrollTop + 200));}
 #cmsFloatPanel .qrcodePanel .qrcodePanel-inner{width:210px;position:relative;overflow:visible;}
-#cmsFloatPanel .qrcodePanel .qrcodePanel-inner .arrowPanel{width:10px;height:30px;position:absolute;right:1px;top:120px;}
+#cmsFloatPanel .qrcodePanel .qrcodePanel-inner .arrowPanel{width:10px;height:30px;position:absolute;right:1px;top:70px;}
 #cmsFloatPanel .qrcodePanel .qrcodePanel-inner .arrowPanel .arrow01{border-left:10px solid #fff;left:1px;}
 #cmsFloatPanel .qrcodePanel .qrcodePanel-inner .arrowPanel .arrow02{border-left:10px solid #fff;}
 #cmsFloatPanel .qrcodePanel .qrcodePanel-inner .codePanel{width:200px;background:#fff;border:position:absolute;left:0;top:0;overflow:hidden;}
