@@ -131,8 +131,9 @@ function type() {
 				for(var i in res.data.rows) {
 					var id = res.data.rows[i].articleTypeId
 					var name = res.data.rows[i].name
-					//							detailList(id, name)
-					if(res.data.rows[i].name == '医疗器械') {
+					$('.tabtype1').html(res.data.rows[0].name)
+					$('.tabtype2').html(res.data.rows[1].name)
+					if(i == 0) {
 						$.ajax({
 							url: '/article-types',
 							type: 'get',
@@ -140,29 +141,10 @@ function type() {
 							async: false,
 							ContentType: 'application/x-www-form-urlencoded',
 							success: function(res) {
-								console.log(res, res.code)
+								$('.tabtype1').attr('href', 'article.html?id=' + res.data.rows[0].articleTypeId)
 								if(res.code == 0) {
 									for(var i in res.data.rows) {
-										$('.ylqx').append('<a href="product.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
-										$('.qxfenlei').append("<li><a class='' href='product.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
-									}
-								} else {
-									alert(res.codeMsg)
-								}
-							}
-						})
-					} else if(res.data.rows[i].name == '新闻中心') {
-						$.ajax({
-							url: '/article-types',
-							type: 'get',
-							data: "articleTypeUpperId=" + res.data.rows[i].articleTypeId,
-							async: false,
-							ContentType: 'application/x-www-form-urlencoded',
-							success: function(res) {
-								console.log(res, res.code)
-								if(res.code == 0) {
-									for(var i in res.data.rows) {
-										$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+										//										$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
 										$('.xwanli').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 									}
 								} else {
@@ -170,7 +152,7 @@ function type() {
 								}
 							}
 						})
-					} else if(res.data.rows[i].name == '案例中心') {
+					} else if(i == 1) {
 						$.ajax({
 							url: '/article-types',
 							type: 'get',
@@ -180,10 +162,9 @@ function type() {
 							success: function(res) {
 								console.log(res, res.code)
 								if(res.code == 0) {
+									$('.tabtype2').attr('href', 'album.html?id=' + res.data.rows[0].articleTypeId)
 									for(var i in res.data.rows) {
-										$('.xwzx').append('<a href="album.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
-										$('.anlizhongxin').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
-
+										$('.qxfenlei').append("<li><a class='' href='album.html=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 									}
 								} else {
 									alert(res.codeMsg)
@@ -197,6 +178,38 @@ function type() {
 			}
 		}
 	})
+
+	$.ajax({
+		url: '/product-types',
+		type: 'get',
+		data: "productTypeUpperId=1",
+		async: false,
+		ContentType: 'application/x-www-form-urlencoded',
+		success: function(res) {
+			$('.tabtype3').html(res.data.rows[0].name)
+			
+			$.ajax({
+				url: '/product-types',
+				type: 'get',
+				data: "productTypeUpperId=" + res.data.rows[0].productTypeId,
+				async: false,
+				ContentType: 'application/x-www-form-urlencoded',
+				success: function(res) {
+					if(res.code == 0) {
+//						$('.xwname').html(res.data.rows[0].name)
+						$('.tabtype3').attr('href', 'product.html?id=' + res.data.rows[0].productTypeId)
+						for(var i in res.data.rows) {
+							$('.anlizhongxin').append("<li><a class='' href='product.html?id=" + res.data.rows[i].productTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+						}
+					} else {
+						alert(res.codeMsg)
+					}
+				}
+
+			})
+		}
+	})
+
 }
 
 function getLocalTime(nS) {
@@ -226,11 +239,11 @@ $.ajax({
 		console.log(res)
 		version = res.version;
 		versionIntro = res.versionIntro;
-		$('.showVersion').html("版本: " + res.version.split('-')[0])
+		$('.showVersion').html("版本号：" + res.version.split('-')[0])
 	}
 })
 $('.showVersion').click(function() {
-	alert('版本: ' + version + "\n" + '更新: ' + versionIntro)
+	alert('版本号：' + version + "\n" + '更新：' + versionIntro)
 })
 
 function ads(banner) {
