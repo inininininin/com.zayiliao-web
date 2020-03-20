@@ -323,11 +323,11 @@
 								$('.list').html('')
 								for(var i in res.data.rows) {
 									$('.list').append('<div class="col-xs-6 col-sm-3 col-md-2 col-mm-6 productImg">' +
-										'<a title="PRO-001" href="product_detail.html?id=' + res.data.rows[i].productId + '">' +
+										'<a title="PRO-001" href="product_detail.html?id=' + res.data.rows[i].productId +'&keyName='+(res.data.rows[i].productType2Name||"")+ '">' +
 										'<span class="imgLink-hover lineTen padding_10">' + res.data.rows[i].intro + '</span>' +
 										'<img src="' + res.data.rows[i].cover + '" alt="" />' +
 										'</a>' +
-										'<a class="productTitle" href="product_detail.html?id=' + res.data.rows[i].productId + '" title="' + res.data.rows[i].name + '">' + res.data.rows[i].name + '</a>' +
+										'<a class="productTitle" href="product_detail.html?id=' + res.data.rows[i].productId +'&keyName='+(res.data.rows[i].productType2Name||"")+ '" title="' + res.data.rows[i].name + '">' + res.data.rows[i].name + '</a>' +
 										'</div>')
 								}
 							} else {
@@ -348,29 +348,29 @@
 									$('.list').html('')
 									for(var i in res.data.rows) {
 										$('.list').append('<div class="col-xs-6 col-sm-3 col-md-2 col-mm-6 productImg">' +
-											'<a title="PRO-001" href="article_detail.html?id=' + res.data.rows[i].articleId + '">' +
+											'<a title="PRO-001" href="article_detail.html?id=' + res.data.rows[i].articleId +'&keyName='+(res.data.rows[i].articleType2Name||"")+ '">' +
 											'<span class="imgLink-hover  lineTen padding_10"></span>' +
 											'<img src="' + res.data.rows[i].cover + '" alt="" />' +
 											'</a>' +
-											'<a class="productTitle" href="article_detail.html?id=' + res.data.rows[i].articleId + '" title="' + res.data.rows[i].name + '">' + res.data.rows[i].name + '</a>' +
+											'<a class="productTitle" href="article_detail.html?id=' + res.data.rows[i].articleId +'&keyName='+(res.data.rows[i].articleType2Name||"")+ '" title="' + res.data.rows[i].name + '">' + res.data.rows[i].name + '</a>' +
 											'</div>')
 									}
 								}else if(type == 2 ) {
 									$('.list').html('')
 									for(var i in res.data.rows) {
 										$('.list').append('<div class="col-xs-6 col-sm-3 col-md-2 col-mm-6 productImg">' +
-											'<a title="PRO-001" href="album_detail.html?id=' + res.data.rows[i].articleId + '">' +
+											'<a title="PRO-001" href="album_detail.html?id=' + res.data.rows[i].articleId + '&keyName='+(res.data.rows[i].articleType2Name||"")+'">' +
 											'<span class="imgLink-hover  lineTen padding_10"></span>' +
 											'<img src="' + res.data.rows[i].cover + '" alt="" />' +
 											'</a>' +
-											'<a class="productTitle" href="album_detail .html?id=' + res.data.rows[i].articleId + '" title="' + res.data.rows[i].name + '">' + res.data.rows[i].name + '</a>' +
+											'<a class="productTitle" href="album_detail .html?id=' + res.data.rows[i].articleId +'&keyName='+(res.data.rows[i].articleType2Name||"")+ '" title="' + res.data.rows[i].name + '">' + res.data.rows[i].name + '</a>' +
 											'</div>')
 									}
 								} else if(type == 4){
 									for(var i in res.data.rows) {
 										$('.indexNewsList').html('')
 										$('.indexNewsList').append('<li class="col-xs-12 col-sm-6 col-md-6">' +
-											'<a href="articleMore_detail.html?id=' + res.data.rows[i].articleId + '">' +
+											'<a href="articleMore_detail.html?id=' + res.data.rows[i].articleId + '&ids='+ids+'&keyName='+(res.data.rows[i].articleType2Name||"")+'">' +
 											'<div class="img" style="background-image: url(' + res.data.rows[i].cover + ')"></div>' +
 											'<div class="txt">' +
 											'<span class="title">' + res.data.rows[i].name + '</span>' +

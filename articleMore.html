@@ -337,7 +337,7 @@
 								var number = parseInt(i) + 1
 								$('.nameList ul').append('<li>' +
 									'<span>' + number + '</span>' +
-									'<a href="article_detail.html?id=' + res.data.rows[i].articleId + '&keyName=' + (getQueryVariable('keyName') ||"")+ '">' + res.data.rows[i].name + '</a>' +
+									'<a href="articleMore_detail.html?id=' + res.data.rows[i].articleId + '&ids=' + (getQueryVariable('ids') ||"")+'&keyName=' + (getQueryVariable('keyName') ||"")+ '">' + res.data.rows[i].name + '</a>' +
 									'<span class="time">' + getLocalTime(res.data.rows[i].createTime / 1000) + '</span>' +
 									'</li>')
 							}
