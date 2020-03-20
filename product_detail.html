@@ -347,10 +347,11 @@
 						ContentType: 'application/x-www-form-urlencoded',
 						success: function(res) {
 							if(res.code == 0) {
+								if(res.data.rows && res.data.rows.length != 0) {
 								for(var i in res.data.rows) {
 									$('.xwname').html(res.data.rows[0].name)
 															$('#firstpane').append("<li><a class='' href='product.html?id=" + res.data.rows[i].productTypeId + "&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
-								}
+								}}
 							} else {
 								alert(res.codeMsg)
 							}
@@ -415,7 +416,7 @@ if(getQueryVariable('keyName')){
 					ContentType: 'application/x-www-form-urlencoded',
 					success: function(res) {
 						if(res.code == 0) {
-							if(res.data.rows) {
+							if(res.data.rows && res.data.rows.length != 0) {
 								for(var i in res.data.rows) {
 									$('.productList').append('<div class="col-xs-6 col-sm-4 col-md-3 col-mm-6 productImg">' +
 										'<a title="' + res.data.rows[i].name + '" href="product_detail.html?id=' + res.data.rows[i].productId + '">' +

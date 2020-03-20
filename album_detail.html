@@ -39,7 +39,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12 col-sm-6 col-md-8 logo">
-							<a href="index.html"><img src="images/logo3.png"  /></a>
+							<a href="index.html"><img src="images/logo3.png" /></a>
 						</div>
 
 						<div class="col-xs-6 col-sm-3 col-md-2">
@@ -151,10 +151,10 @@
 		</div>
 
 		<script type="text/javascript" src="js/common.js"></script>
-    <script type="text/javascript">
-    	ads(3)
-        var glide = $('.slider').glide();
-    </script>
+		<script type="text/javascript">
+			ads(3)
+			var glide = $('.slider').glide();
+		</script>
 
 		<!-- 内容 -->
 		<div class="container">
@@ -285,10 +285,9 @@
 
 		</footer>
 
-<!--		<script type="text/javascript" src="js/common.js"></script>
+		<!--		<script type="text/javascript" src="js/common.js"></script>
 -->
 		<!--客服面板-->
-		
 
 		<script type="text/javascript">
 			function mShare() {
@@ -327,12 +326,13 @@
 									success: function(res) {
 										console.log(res, res.code)
 										if(res.code == 0) {
+											if(res.data.rows && res.data.rows.length != 0) {
 											$('.xwname').html(res.data.rows[0].name)
-//											detailList(1, res.data.rows[0].articleTypeId)
-//											productAll(res.data.rows[0].articleTypeId)
+											//											detailList(1, res.data.rows[0].articleTypeId)
+											//											productAll(res.data.rows[0].articleTypeId)
 											for(var i in res.data.rows) {
 												$('#firstpane').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
-											}
+											}}
 										} else {
 											alert(res.codeMsg)
 										}
@@ -348,7 +348,6 @@
 			if(getQueryVariable('keyName')) {
 				$('.xwname').html(decodeURIComponent(getQueryVariable('keyName')))
 			}
-			
 
 			function articleDetail(id) {
 				$.ajax({
@@ -363,10 +362,10 @@
 							$('.detailTitle').html(res.data.name)
 							$('.detailTime').html(getLocalTime(res.data.createTime / 1000))
 							if(res.data.prevArticle) {
-								$('.prevBox').html("上一个：<a href='album_detail.html?id=" + res.data.prevArticle.articleId + "&keyName="+(getQueryVariable('keyName')||"")+"' title='" + res.data.prevArticle.name + "'>" + res.data.prevArticle.name + "</a>")
+								$('.prevBox').html("上一个：<a href='album_detail.html?id=" + res.data.prevArticle.articleId + "&keyName=" + (getQueryVariable('keyName') || "") + "' title='" + res.data.prevArticle.name + "'>" + res.data.prevArticle.name + "</a>")
 							}
 							if(res.data.nextArticle) {
-								$('.nextBox').html("下一个：<a href='album_detail.html?id=" + res.data.nextArticle.articleId + "&keyName="+(getQueryVariable('keyName')||"")+"' title='" + res.data.nextArticle.name + "'>" + res.data.nextArticle.name + "</a>")
+								$('.nextBox').html("下一个：<a href='album_detail.html?id=" + res.data.nextArticle.articleId + "&keyName=" + (getQueryVariable('keyName') || "") + "' title='" + res.data.nextArticle.name + "'>" + res.data.nextArticle.name + "</a>")
 							}
 							if(res.data.content) {
 								$.ajax({
@@ -396,14 +395,14 @@
 					ContentType: 'application/x-www-form-urlencoded',
 					success: function(res) {
 						if(res.code == 0) {
-							if(res.data.rows){
+								if(res.data.rows && res.data.rows.length != 0) {
 								for(var i in res.data.rows) {
-								$('.newsList').append("<li><a href='album_detail.html?id=" + res.data.rows[i].articleId + "&keyName="+(getQueryVariable('keyName')||"")+"' title='" + res.data.rows[i].name + "'>" + res.data.rows[i].name + "</a></li>")
+									$('.newsList').append("<li><a href='album_detail.html?id=" + res.data.rows[i].articleId + "&keyName=" + (getQueryVariable('keyName') || "") + "' title='" + res.data.rows[i].name + "'>" + res.data.rows[i].name + "</a></li>")
+								}
+							} else {
+								$('.newsBox').css('display', 'none')
 							}
-							}else{
-								$('.newsBox').css('display','none')
-							}
-							
+
 							//							$('.nextBox').html("下一个：<a href='article_detail.html?id="+res.data.nextArticle.articleId+"' title='"+res.data.nextArticle.name+"'>"+res.data.nextArticle.name+"</a>")
 
 						} else {

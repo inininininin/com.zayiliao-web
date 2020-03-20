@@ -141,11 +141,14 @@ function type() {
 							async: false,
 							ContentType: 'application/x-www-form-urlencoded',
 							success: function(res) {
-								$('.tabtype1').attr('href', 'article.html?id=' + res.data.rows[0].articleTypeId)
+
 								if(res.code == 0) {
-									for(var i in res.data.rows) {
-										//										$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
-										$('.xwanli').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+									if(res.data.rows && res.data.rows.length != 0) {
+										$('.tabtype1').attr('href', 'article.html?id=' + res.data.rows[0].articleTypeId)
+										for(var i in res.data.rows) {
+											//										$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+											$('.xwanli').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+										}
 									}
 								} else {
 									alert(res.codeMsg)
@@ -162,9 +165,11 @@ function type() {
 							success: function(res) {
 								console.log(res, res.code)
 								if(res.code == 0) {
-									$('.tabtype2').attr('href', 'album.html?id=' + res.data.rows[0].articleTypeId)
-									for(var i in res.data.rows) {
-										$('.qxfenlei').append("<li><a class='' href='album.html=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+									if(res.data.rows && res.data.rows.length != 0) {
+										$('.tabtype2').attr('href', 'album.html?id=' + res.data.rows[0].articleTypeId)
+										for(var i in res.data.rows) {
+											$('.qxfenlei').append("<li><a class='' href='album.html=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+										}
 									}
 								} else {
 									alert(res.codeMsg)
@@ -187,7 +192,7 @@ function type() {
 		ContentType: 'application/x-www-form-urlencoded',
 		success: function(res) {
 			$('.tabtype3').html(res.data.rows[0].name)
-			
+
 			$.ajax({
 				url: '/product-types',
 				type: 'get',
@@ -196,10 +201,12 @@ function type() {
 				ContentType: 'application/x-www-form-urlencoded',
 				success: function(res) {
 					if(res.code == 0) {
-//						$('.xwname').html(res.data.rows[0].name)
-						$('.tabtype3').attr('href', 'product.html?id=' + res.data.rows[0].productTypeId)
-						for(var i in res.data.rows) {
-							$('.anlizhongxin').append("<li><a class='' href='product.html?id=" + res.data.rows[i].productTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+						if(res.data.rows && res.data.rows.length != 0) {
+							//						$('.xwname').html(res.data.rows[0].name)
+							$('.tabtype3').attr('href', 'product.html?id=' + res.data.rows[0].productTypeId)
+							for(var i in res.data.rows) {
+								$('.anlizhongxin').append("<li><a class='' href='product.html?id=" + res.data.rows[i].productTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+							}
 						}
 					} else {
 						alert(res.codeMsg)

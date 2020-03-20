@@ -387,3 +387,57 @@ footer a:hover{color:#fff}
 @media screen and (min-width:1200px) {
 	.navbar-default .navbar-nav > li > a{min-width:145px; /*padding兼容低版IE*/}
 }
+
+
+
+.select{
+	background: #3477c8 !important;
+	color: #fff !important;
+}
+
+.lineOne {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break:break-all;word-wrap:break-word
+}
+.lineTwo {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break:break-all;word-wrap:break-word
+}
+.lineThree{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break:break-all;word-wrap:break-word
+}
+.lineFour {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break:break-all;word-wrap:break-word
+}
+.lineFive {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break:break-all;word-wrap:break-word
+}
+.lineSix {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break:break-all;word-wrap:break-word
+}
+.padding_10{
+	padding: 0 10px;
+	overflow: hidden;
+}

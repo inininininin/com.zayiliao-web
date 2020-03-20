@@ -327,11 +327,13 @@
 									success: function(res) {
 										console.log(res, res.code)
 										if(res.code == 0) {
+											if(res.data.rows && res.data.rows.length != 0) {
 											$('.xwname').html(res.data.rows[0].name)
 //											detailList(1, res.data.rows[0].articleTypeId)
 //											productAll(res.data.rows[0].articleTypeId)
 											for(var i in res.data.rows) {
 												$('#firstpane').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+											}
 											}
 										} else {
 											alert(res.codeMsg)
@@ -396,7 +398,8 @@
 					ContentType: 'application/x-www-form-urlencoded',
 					success: function(res) {
 						if(res.code == 0) {
-							if(res.data.rows){
+							
+							if(res.data.rows && res.data.rows.length != 0) {
 								for(var i in res.data.rows) {
 								$('.newsList').append("<li><a href='article_detail.html?id=" + res.data.rows[i].articleId + "&keyName="+(getQueryVariable('keyName')||"")+"' title='" + res.data.rows[i].name + "'>" + res.data.rows[i].name + "</a></li>")
 							}

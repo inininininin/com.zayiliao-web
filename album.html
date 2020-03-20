@@ -298,12 +298,13 @@
 										success: function(res) {
 											console.log(res, res.code)
 											if(res.code == 0) {
+												if(res.data.rows && res.data.rows.length != 0) {
 												$('.xwname').html(res.data.rows[0].name)
 												detailList(1, res.data.rows[0].articleTypeId)
 												productAll(res.data.rows[0].articleTypeId)
 												for(var i in res.data.rows) {
 													$('#firstpane').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName="+ encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
-												}
+												}}
 											} else {
 												alert(res.codeMsg)
 											}
@@ -327,6 +328,7 @@
 						ContentType: 'application/x-www-form-urlencoded',
 						success: function(res) {
 							if(res.code == 0) {
+								if(res.data.rows && res.data.rows.length != 0) {
 								$('.nameList ul').html('')
 								for(var i in res.data.rows) {
 									//								if(String(parseInt(i)+1)==10){
@@ -340,7 +342,7 @@
 										'<a href="album_detail.html?id=' + res.data.rows[i].articleId + '&keyName='+getQueryVariable('keyName')+'">' + res.data.rows[i].name + '</a>' +
 										'<span class="time">' + getLocalTime(res.data.rows[i].createTime / 1000) + '</span>' +
 										'</li>')
-								}
+								}}
 							} else {
 								alert(res.codeMsg)
 							}
