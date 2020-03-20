@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -7,13 +7,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="applicable-device" content="pc,mobile" />
-		<title>新闻中心</title>
+		<title>新闻详细页</title>
 
 		<link href="css/bootstrap.css" rel="stylesheet" />
 		<link href="css/glide.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
 		<link href="css/online.css" rel="stylesheet" />
-		<link rel="stylesheet" href="page/paging.css" />
 		<script src="js/jquery.min.js" type="text/javascript"></script>
 		<script src="js/bootstrap.js" type="text/javascript"></script>
 		<script src="js/jquery.glide.js" type="text/javascript"></script>
@@ -141,16 +140,21 @@
 		<div class="banner">
 			<div class="slider">
 				<ul class="slider__wrapper">
-
+					<!--<li class="slider__item">
+						<a target="_blank" title="" href="" style="background-image:url(images/1.jpg)"><img src="images/banner-3.png" alt="MojoCube 官方" /></a>
+					</li>
+					<li class="slider__item">
+						<a target="_blank" title="" href="" style="background-image:url(images/2.jpg)"><img src="images/banner-3.png" alt="MojoCube 官方" /></a>
+					</li>-->
 				</ul>
 			</div>
 		</div>
 
 		<script type="text/javascript" src="js/common.js"></script>
-		<script type="text/javascript">
-			ads(3)
-			var glide = $('.slider').glide();
-		</script>
+    <script type="text/javascript">
+    	ads(3)
+        var glide = $('.slider').glide();
+    </script>
 
 		<!-- 内容 -->
 		<div class="container">
@@ -169,19 +173,65 @@
 
 					<div class="col-sm-12 col-md-12 pad">
 
-						<div class="nameList" style="margin-top:10px;">
-							<ul>
+						<div class="detailTitle" style="border:0px; background:none; font-size:20px; color:#000;">
+
+						</div>
+
+						<div class="detailTime">
+
+						</div>
+
+						<div class="detailContent">
+
+							<!--<span style="color:#505050;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;">
+                            CSS和XHTML经过这几年在国内的发展，已经占据了主导地位。也成了网页前端必须掌握的技能之一。关于两三年前用TABLE布局好还是DIV布局好的争议已经烟消云散，已经完全没有必要提了。网站的各个职位要求似乎都跟CSS沾上了边，设计、程序都要会写几个样式。
+                            <br /><br />
+                            网页前端制作也一下子成了热门职位，即使在金融危机的困难风潮下，招聘前端职位的公司还是很多。毕竟作为一个新兴的职位，和其它职位比较起来，前端技能熟练的人还不能算是太多。不过新人学习的劲头也足一些，很多人为了换博客和空间的皮肤也开始学习CSS，所以也产生了好多CSS相关的网站、论坛、 QQ群。也是个好现象吧。
+                            <br /><br />
+                            CSS3标准的呼之欲出，将使得CSS也会发展成为一门弱编程语言。所以前端的难度也会更大，更多的样式和属性需要使用。而且各个浏览器也会推出自己有关CSS功能的额外扩展需要我们知道。未来的CSS会更加强大和健壮。当然，浏览器的兼容问题依旧存在。最近WEB界掀起了反IE6的运动，为推动 W3C标准和更好的用户体验，建议升级IE6。而目前来说，IE8仍在测试阶段，对CSS3也提供了部分支持。而新版的火狐、Safari也开始支持 CSS3。
+                            <br /><br />
+                            JavaScript在最近几年也重新焕发了光彩，编程的要求也会越来越高，不过prototype、jQuery等JS插件的不断更新使我们更充满了想象力，也让代码书写更加从容简单。因而也是前端人员需要掌握的技能。不过IE的自身标准和W3C的标准不兼容问题，也需要我们从头开始学习。本博推荐JavaScript权威指南，比较详细的介绍JS核心内容和浏览器支持特性。
+                            <br /><br />
+                            就我个人来看，网页前端在将来还会在网站中占据很大的空间和位置。网页前端的水准会走上一个新的发展历程。
+                            <br /><br />
+                        </span>-->
+
+						</div>
+
+						<div class="otherPageBox">
+
+							<div class="col-xs-9 col-sm-9 col-md-9 pad">
+								<div class='otherPage'>
+									<div class='prevBox'>
+										<!--上一个：-->
+										<!--<a href='article_detail.html' title="浅谈URL使用在前端设计中的优化">浅谈URL使用在前端设计中的优化</a>-->
+									</div>
+									<div class='nextBox'>
+										<!--下一个：-->
+										<!--<a href='article_detail.html' title="网页前端将在网站中占据很大的空间和位置">网页前端将在网站中占据很大的空间和位置</a>-->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-xs-3 col-sm-3 col-md-3 pad">
+								<a class="back" href="javascript:history.go(-1)">返回</a>
+							</div>
+
+						</div>
+
+						<div class="aboutProduct newsBox">
+							<div class="titleBar">
+								<h1>相关新闻</h1>
+								<span>&nbsp</span>
+							</div>
+							<ul class="newsList">
+
+								<!--<li><a href="article_detail.html" title="微软欲主动送Windows Phone 7设备给黑客破解">微软欲主动送Windows Phone 7设备给黑客破解</a></li>
+                            <li><a href="article_detail.html" title="友盟Android应用数据报告显示国内优质应用非常稀缺">友盟Android应用数据报告显示国内优质应用非常稀缺</a></li>-->
 
 							</ul>
 						</div>
 
-						<!--<div class='pageBar'><div class='pageList'><a class='selected'>1</a></div></div>-->
-						<!--<div class="clear"></div>-->
-						<!--						<div class="paging">
--->
-						<div class="box" id="box" style="margin-bottom: 2rem"></div>
-						<script src="page/jquery-1.11.1.min.js"></script>
-						<script src="page/paging.js"></script>
 					</div>
 
 				</div>
@@ -195,7 +245,7 @@
 						</div>
 						<div class="list">
 							<ul id="firstpane">
-								<!--<li><a class='' href='article.html'>公司新闻</a></li>
+								<!--<li><a class='firstSelected selected' href='article.html'>公司新闻</a></li>
                             <li><a class='' href='article.html'>行业资讯</a></li>-->
 							</ul>
 						</div>
@@ -235,7 +285,10 @@
 
 		</footer>
 
-		<!--<script type="text/javascript" src="js/common.js"></script>-->
+<!--		<script type="text/javascript" src="js/common.js"></script>
+-->
+		<!--客服面板-->
+		
 
 		<script type="text/javascript">
 			function mShare() {
@@ -251,33 +304,7 @@
 				$("#mShareBox").hide();
 				$("#serviceBox").toggle();
 			}
-			var pageNm = '',
-				setTotalCount = 0;
-
-			function productAll(ids,type) {
-					if(type==1){
-					var param="articleType2Id=" + ids
-				}else{
-					var param="articleType1Id=" + ids
-				}
-				
-				$.ajax({
-					url: '/articles-sum',
-					type: 'get',
-					data: param,
-					async: false,
-					ContentType: 'application/x-www-form-urlencoded',
-					success: function(res) {
-						console.log(res, res.code)
-						if(res.code == 0) {
-							setTotalCount = res.data.rowCount;
-							pageNm = Math.ceil(setTotalCount / 10);
-						} else {
-							alert(res.codeMsg)
-						}
-					}
-				})
-			}
+			type()
 			$.ajax({
 				url: '/article-types',
 				type: 'get',
@@ -302,11 +329,12 @@
 										if(res.code == 0) {
 											if(res.data.rows && res.data.rows.length != 0) {
 											$('.xwname').html(res.data.rows[0].name)
-											detailList(1, res.data.rows[0].articleTypeId)
-											productAll(res.data.rows[0].articleTypeId)
+//											detailList(1, res.data.rows[0].articleTypeId)
+//											productAll(res.data.rows[0].articleTypeId)
 											for(var i in res.data.rows) {
 												$('#firstpane').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
-											}}
+											}
+											}
 										} else {
 											alert(res.codeMsg)
 										}
@@ -319,90 +347,80 @@
 					}
 				}
 			})
+			if(getQueryVariable('keyName')) {
+				$('.xwname').html(decodeURIComponent(getQueryVariable('keyName')))
+			}
+			
 
-			function detailList(pn, ids,type) {
-				if(type==1){
-					var param="&articleType2Id=" + ids
-				}else{
-					var param="&articleType1Id=" + ids
-				}
-				
+			function articleDetail(id) {
 				$.ajax({
-					url: '/articles',
+					url: '/article-' + id,
 					type: 'get',
-					data: "pn=" + pn + "&ps=10"+param,
+					//					data: "pn="+pn+"&ps=10&articleType2Id=" + ids,
 					async: false,
 					ContentType: 'application/x-www-form-urlencoded',
 					success: function(res) {
 						if(res.code == 0) {
-							if(res.data.rows && res.data.rows.length != 0) {
-							$('.nameList ul').html('')
-							for(var i in res.data.rows) {
-								//								if(String(parseInt(i)+1)==10){
-								//									var number=String(pn)+String(0)
-								//								}else{
-								//									var number=String(pn-1)+String(parseInt(i)+1)
-								//								}
-								var number = parseInt(i) + 1
-								$('.nameList ul').append('<li>' +
-									'<span>' + number + '</span>' +
-									'<a href="article_detail.html?id=' + res.data.rows[i].articleId + '&keyName=' + (getQueryVariable('keyName') ||"")+ '">' + res.data.rows[i].name + '</a>' +
-									'<span class="time">' + getLocalTime(res.data.rows[i].createTime / 1000) + '</span>' +
-									'</li>')
-							}}
+							console.log(res.data.content)
+							$('.detailTitle').html(res.data.name)
+							$('.detailTime').html(getLocalTime(res.data.createTime / 1000))
+							if(res.data.prevArticle) {
+								$('.prevBox').html("上一个：<a href='article_detail.html?id=" + res.data.prevArticle.articleId + "&keyName="+(getQueryVariable('keyName')||"")+"' title='" + res.data.prevArticle.name + "'>" + res.data.prevArticle.name + "</a>")
+							}
+							if(res.data.nextArticle) {
+								$('.nextBox').html("下一个：<a href='article_detail.html?id=" + res.data.nextArticle.articleId + "&keyName="+(getQueryVariable('keyName')||"")+"' title='" + res.data.nextArticle.name + "'>" + res.data.nextArticle.name + "</a>")
+							}
+							if(res.data.content) {
+								$.ajax({
+									type: "get",
+									url: res.data.content,
+									async: true,
+									success: function(res) {
+										//									console.log(res)
+										$('.detailContent').html(res)
+									}
+								});
+							}
+
 						} else {
 							alert(res.codeMsg)
 						}
 					}
 				})
 			}
-			var ids = ''
-			if(getQueryVariable('id')) {
-				ids = getQueryVariable('id')
-				detailList(1, getQueryVariable('id'),1)
-				productAll(getQueryVariable('id'));
-			}
-			if(getQueryVariable('ids')) {
-				ids = getQueryVariable('ids')
-				detailList(1, getQueryVariable('ids'),2)
-				productAll(getQueryVariable('ids'));
-			}
-			if(getQueryVariable('keyName')) {
-				$('.xwname').html(decodeURIComponent(getQueryVariable('keyName')))
-			}
-			type()
 
-			$('#box').paging({
-				//					kw = $('#searchBox').val();
-				initPageNo: 1, // 初始页码
-				totalPages: pageNm, //总页数
-				totalCount: '合计' + setTotalCount + '条数据', // 条目总数
-				slideSpeed: 600, // 缓动速度。单位毫秒
-				jump: true, //是否支持跳转
-				callback: function(page) { // 回调函数
-					console.log(page)
-					detailList(page, ids)
-				}
-			})
-		</script>
-		<script>
-			$('body').on('click', '.topLine .btn', function() {
-				//				ids = $('#searchBox').val();
-				productAll(ids);
-				product(1, ids);
-				$('#box').paging({
-					initPageNo: 1, // 初始页码
-					totalPages: pageNm, //总页数
-					totalCount: '合计' + setTotalCount + '条数据', // 条目总数
-					slideSpeed: 600, // 缓动速度。单位毫秒
-					jump: true, //是否支持跳转
-					callback: function(page) { // 回调函数
-						console.log(page)
-						detailList(page, ids)
+			function relationArticle(id) {
+				$.ajax({
+					url: '/articles',
+					type: 'get',
+					data: "pn=1&ps=2&relatedArticleId=" + id,
+					async: false,
+					ContentType: 'application/x-www-form-urlencoded',
+					success: function(res) {
+						if(res.code == 0) {
+							
+							if(res.data.rows && res.data.rows.length != 0) {
+								for(var i in res.data.rows) {
+								$('.newsList').append("<li><a href='article_detail.html?id=" + res.data.rows[i].articleId + "&keyName="+(getQueryVariable('keyName')||"")+"' title='" + res.data.rows[i].name + "'>" + res.data.rows[i].name + "</a></li>")
+							}
+							}else{
+								$('.newsBox').css('display','none')
+							}
+							
+							//							$('.nextBox').html("下一个：<a href='article_detail.html?id="+res.data.nextArticle.articleId+"' title='"+res.data.nextArticle.name+"'>"+res.data.nextArticle.name+"</a>")
+
+						} else {
+							alert(res.codeMsg)
+						}
 					}
 				})
-			})
+			}
+			if(getQueryVariable('id')) {
+				articleDetail(getQueryVariable('id'))
+				relationArticle(getQueryVariable('id'))
+			}
 		</script>
+
 	</body>
 
 </html>

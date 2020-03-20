@@ -129,10 +129,11 @@ function type() {
 			console.log(res, res.code)
 			if(res.code == 0) {
 				for(var i in res.data.rows) {
-					var id = res.data.rows[i].articleTypeId
-					var name = res.data.rows[i].name
+//					var id = res.data.rows[i].articleTypeId
+//					var name = res.data.rows[i].name
 					$('.tabtype1').html(res.data.rows[0].name)
 					$('.tabtype2').html(res.data.rows[1].name)
+					var typeId=res.data.rows[i].articleTypeId
 					if(i == 0) {
 						$.ajax({
 							url: '/article-types',
@@ -149,6 +150,8 @@ function type() {
 											//										$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
 											$('.xwanli').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 										}
+									}else{
+										$('.tabtype1').attr('href', 'article.html?ids=' + typeId)
 									}
 								} else {
 									alert(res.codeMsg)
@@ -170,6 +173,8 @@ function type() {
 										for(var i in res.data.rows) {
 											$('.qxfenlei').append("<li><a class='' href='album.html=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 										}
+									}else{
+										$('.tabtype2').attr('href', 'album.html?ids=' + typeId)
 									}
 								} else {
 									alert(res.codeMsg)

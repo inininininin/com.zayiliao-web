@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -253,18 +253,14 @@
 			}
 			var pageNm = '',
 				setTotalCount = 0;
+				var ids = ''
 
 			function productAll(ids,type) {
-					if(type==1){
-					var param="articleType2Id=" + ids
-				}else{
-					var param="articleType1Id=" + ids
-				}
 				
 				$.ajax({
 					url: '/articles-sum',
 					type: 'get',
-					data: param,
+					data: "articleType2Id=" + ids,
 					async: false,
 					ContentType: 'application/x-www-form-urlencoded',
 					success: function(res) {
@@ -278,64 +274,59 @@
 					}
 				})
 			}
-			$.ajax({
-				url: '/article-types',
-				type: 'get',
-				data: "articleTypeUpperId=1",
-				async: false,
-				ContentType: 'application/x-www-form-urlencoded',
-				success: function(res) {
-					console.log(res, res.code)
-					if(res.code == 0) {
-						for(var i in res.data.rows) {
-							var id = res.data.rows[i].articleTypeId
-							var name = res.data.rows[i].name
-							if(i == 0) {
+//			$.ajax({
+//				url: '/article-types',
+//				type: 'get',
+//				data: "articleTypeUpperId=1",
+//				async: false,
+//				ContentType: 'application/x-www-form-urlencoded',
+//				success: function(res) {
+//					console.log(res, res.code)
+//					if(res.code == 0) {
+//						for(var i in res.data.rows) {
+//							var id = res.data.rows[i].articleTypeId
+//							var name = res.data.rows[i].name
+//							if(i == 0) {
 								$.ajax({
 									url: '/article-types',
 									type: 'get',
-									data: "articleTypeUpperId=" + res.data.rows[i].articleTypeId,
+									data: "articleTypeUpperId=" + getQueryVariable('ids'),
 									async: false,
 									ContentType: 'application/x-www-form-urlencoded',
 									success: function(res) {
 										console.log(res, res.code)
 										if(res.code == 0) {
 											if(res.data.rows && res.data.rows.length != 0) {
+												ids=res.data.rows[0].articleTypeId
 											$('.xwname').html(res.data.rows[0].name)
 											detailList(1, res.data.rows[0].articleTypeId)
 											productAll(res.data.rows[0].articleTypeId)
 											for(var i in res.data.rows) {
-												$('#firstpane').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+												$('#firstpane').append("<li><a class='' href='articleMore.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "&ids="+getQueryVariable('ids')+"'>" + res.data.rows[i].name + "</a></li>")
 											}}
 										} else {
 											alert(res.codeMsg)
 										}
 									}
 								})
-							}
-						}
-					} else {
-						alert(res.codeMsg)
-					}
-				}
-			})
+//							}
+//						}
+//					} else {
+//						alert(res.codeMsg)
+//					}
+//				}
+//			})
 
-			function detailList(pn, ids,type) {
-				if(type==1){
-					var param="&articleType2Id=" + ids
-				}else{
-					var param="&articleType1Id=" + ids
-				}
-				
+			function detailList(pn, ids) {
 				$.ajax({
 					url: '/articles',
 					type: 'get',
-					data: "pn=" + pn + "&ps=10"+param,
+					data: "pn=" + pn + "&ps=10"+"&articleType2Id=" + ids,
 					async: false,
 					ContentType: 'application/x-www-form-urlencoded',
 					success: function(res) {
 						if(res.code == 0) {
-							if(res.data.rows && res.data.rows.length != 0) {
+//							if(res.data.rows && res.data.rows.length != 0) {
 							$('.nameList ul').html('')
 							for(var i in res.data.rows) {
 								//								if(String(parseInt(i)+1)==10){
@@ -349,24 +340,21 @@
 									'<a href="article_detail.html?id=' + res.data.rows[i].articleId + '&keyName=' + (getQueryVariable('keyName') ||"")+ '">' + res.data.rows[i].name + '</a>' +
 									'<span class="time">' + getLocalTime(res.data.rows[i].createTime / 1000) + '</span>' +
 									'</li>')
-							}}
+							}
+//							}
 						} else {
 							alert(res.codeMsg)
 						}
 					}
 				})
 			}
-			var ids = ''
+			
 			if(getQueryVariable('id')) {
 				ids = getQueryVariable('id')
-				detailList(1, getQueryVariable('id'),1)
+				detailList(1, getQueryVariable('id'))
 				productAll(getQueryVariable('id'));
 			}
-			if(getQueryVariable('ids')) {
-				ids = getQueryVariable('ids')
-				detailList(1, getQueryVariable('ids'),2)
-				productAll(getQueryVariable('ids'));
-			}
+			
 			if(getQueryVariable('keyName')) {
 				$('.xwname').html(decodeURIComponent(getQueryVariable('keyName')))
 			}

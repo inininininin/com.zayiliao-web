@@ -101,7 +101,7 @@ td{color:#666}
 .titleBar a:hover{background:#3477c8;color:#fff}
 .titleBar .rightMore{float:right;border-radius:0px;display:block;line-height:35px;min-width:initial;padding-left:10px;padding-right:10px;background:#ddd;color:#fff;font-size:12px;transition:background 0.5s}
 .titleBar .rightMore:hover{background:#3477c8;color:#fff;}
-
+.titleBar a:nth-child(2){margin-left: 0;}
 
 
 /*公司简介*/
@@ -433,6 +433,13 @@ footer a:hover{color:#fff}
 .lineSix {
   display: -webkit-box;
   -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break:break-all;word-wrap:break-word
+}
+.lineTen {
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break:break-all;word-wrap:break-word

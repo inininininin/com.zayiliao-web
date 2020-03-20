@@ -187,7 +187,7 @@
 								<!--<a href="#">综合检测机</a>
 								<a href="#">无影灯</a>
 								<a href="#">手术床</a>-->
-								<a class="rightMore" href="javascript:;">>></a>
+								<a class="rightMore rightMore1" href="javascript:;">>></a>
 							</div>
 							<div class="list">
 
@@ -221,9 +221,9 @@
 				<div class="col-xs-12 col-sm-9 col-md-9">
 					<div class="newsBox">
 						<div class="titleBar xwzx">
-							<h1></h1>
-							<span></span>
-							<a class="rightMore" href="article.html">>></a>
+							<!--<h1></h1>
+							<span></span>-->
+							<a class="rightMore rightMore2" href="javascript:;">>></a>
 						</div>
 						<ul class="indexNewsList">
 
@@ -287,7 +287,10 @@
 		<script type="text/javascript" src="js/common.js"></script>
 
 		<script type="text/javascript">
-			var type=3
+			var type = 3;
+			var selId='';
+			var selIds=''
+
 			function mShare() {
 				$("#mShareBox").toggle();
 				$("#serviceBox").hide();
@@ -306,73 +309,86 @@
 				return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
 			}
 
-			function detailList(ids, name,type) {
-				if(type==3){
+			function detailList(ids, name, type) {
+				if(type == 3) {
 					$.ajax({
-					url: '/products',
-					type: 'get',
-					data: "pn=1&ps=6&productType1Id=" + ids,
-					async: false,
-					ContentType: 'application/x-www-form-urlencoded',
-					success: function(res) {
-						if(res.code == 0) {
-							
+						url: '/products',
+						type: 'get',
+						data: "pn=1&ps=6&productType1Id=" + ids,
+						async: false,
+						ContentType: 'application/x-www-form-urlencoded',
+						success: function(res) {
+							if(res.code == 0) {
+
 								$('.list').html('')
 								for(var i in res.data.rows) {
 									$('.list').append('<div class="col-xs-6 col-sm-3 col-md-2 col-mm-6 productImg">' +
 										'<a title="PRO-001" href="product_detail.html?id=' + res.data.rows[i].productId + '">' +
-										'<span class="imgLink-hover lineTen padding_10">'+res.data.rows[i].intro+'</span>' +
+										'<span class="imgLink-hover lineTen padding_10">' + res.data.rows[i].intro + '</span>' +
 										'<img src="' + res.data.rows[i].cover + '" alt="" />' +
 										'</a>' +
 										'<a class="productTitle" href="product_detail.html?id=' + res.data.rows[i].productId + '" title="' + res.data.rows[i].name + '">' + res.data.rows[i].name + '</a>' +
 										'</div>')
 								}
-						} else {
-							alert(res.codeMsg)
+							} else {
+								alert(res.codeMsg)
+							}
 						}
-					}
-				})
-				}else{
+					})
+				} else {
 					$.ajax({
-					url: '/articles',
-					type: 'get',
-					data: "pn=1&ps=6&articleType1Id=" + ids,
-					async: false,
-					ContentType: 'application/x-www-form-urlencoded',
-					success: function(res) {
-						if(res.code == 0) {
-							if(type ==1 || type==2) {
-								$('.list').html('')
-								for(var i in res.data.rows) {
-									$('.list').append('<div class="col-xs-6 col-sm-3 col-md-2 col-mm-6 productImg">' +
-										'<a title="PRO-001" href="article_detail.html?id=' + res.data.rows[i].articleId + '">' +
-										'<span class="imgLink-hover  lineTen padding_10"></span>' +
-										'<img src="' + res.data.rows[i].cover + '" alt="" />' +
-										'</a>' +
-										'<a class="productTitle" href="article_detail.html?id=' + res.data.rows[i].articleId + '" title="' + res.data.rows[i].name + '">' + res.data.rows[i].name + '</a>' +
-										'</div>')
+						url: '/articles',
+						type: 'get',
+						data: "pn=1&ps=6&articleType1Id=" + ids,
+						async: false,
+						ContentType: 'application/x-www-form-urlencoded',
+						success: function(res) {
+							if(res.code == 0) {
+								if(type == 1 ) {
+									$('.list').html('')
+									for(var i in res.data.rows) {
+										$('.list').append('<div class="col-xs-6 col-sm-3 col-md-2 col-mm-6 productImg">' +
+											'<a title="PRO-001" href="article_detail.html?id=' + res.data.rows[i].articleId + '">' +
+											'<span class="imgLink-hover  lineTen padding_10"></span>' +
+											'<img src="' + res.data.rows[i].cover + '" alt="" />' +
+											'</a>' +
+											'<a class="productTitle" href="article_detail.html?id=' + res.data.rows[i].articleId + '" title="' + res.data.rows[i].name + '">' + res.data.rows[i].name + '</a>' +
+											'</div>')
+									}
+								}else if(type == 2 ) {
+									$('.list').html('')
+									for(var i in res.data.rows) {
+										$('.list').append('<div class="col-xs-6 col-sm-3 col-md-2 col-mm-6 productImg">' +
+											'<a title="PRO-001" href="album_detail.html?id=' + res.data.rows[i].articleId + '">' +
+											'<span class="imgLink-hover  lineTen padding_10"></span>' +
+											'<img src="' + res.data.rows[i].cover + '" alt="" />' +
+											'</a>' +
+											'<a class="productTitle" href="album_detail .html?id=' + res.data.rows[i].articleId + '" title="' + res.data.rows[i].name + '">' + res.data.rows[i].name + '</a>' +
+											'</div>')
+									}
+								} else if(type == 4){
+									for(var i in res.data.rows) {
+										$('.indexNewsList').html('')
+										$('.indexNewsList').append('<li class="col-xs-12 col-sm-6 col-md-6">' +
+											'<a href="articleMore_detail.html?id=' + res.data.rows[i].articleId + '">' +
+											'<div class="img" style="background-image: url(' + res.data.rows[i].cover + ')"></div>' +
+											'<div class="txt">' +
+											'<span class="title">' + res.data.rows[i].name + '</span>' +
+											'<span class="time">' + getLocalTime(res.data.rows[i].createTime / 1000) + '</span>' +
+											'<p>' + res.data.rows[i].intro + '</p>' +
+											'</div>' +
+											'</a>' +
+											'</li>')
+									
+									}
 								}
 							} else {
-								for(var i in res.data.rows) {
-									$('.indexNewsList').append('<li class="col-xs-12 col-sm-6 col-md-6">' +
-										'<a href="article_detail.html?id=' + res.data.rows[i].articleId + '">' +
-										'<div class="img" style="background-image: url(' + res.data.rows[i].cover + ')"></div>' +
-										'<div class="txt">' +
-										'<span class="title">' + res.data.rows[i].name + '</span>' +
-										'<span class="time">' + getLocalTime(res.data.rows[i].createTime / 1000) + '</span>' +
-										'<p>' + res.data.rows[i].intro + '</p>' +
-										'</div>' +
-										'</a>' +
-										'</li>')
-								}
+								alert(res.codeMsg)
 							}
-						} else {
-							alert(res.codeMsg)
 						}
-					}
-				})
+					})
 				}
-				
+
 			}
 
 			ads(1)
@@ -384,7 +400,8 @@
 				ContentType: 'application/x-www-form-urlencoded',
 				success: function(res) {
 					if(res.data.rows && res.data.rows.length != 0) {
-						detailList(res.data.rows[0].productTypeId, res.data.rows[0].name,3)
+						detailList(res.data.rows[0].productTypeId, res.data.rows[0].name, 3)
+						
 						$('.tabtype3').html(res.data.rows[0].name)
 						$('.ylqx').append('<a class="select" href="javascript:;" type="3" id="' + res.data.rows[0].productTypeId + '" keyName="' + encodeURIComponent(res.data.rows[0].name) + '">' + res.data.rows[0].name + '</a>')
 						//					$('.ylqx h1').html(res.data.rows[0].name)
@@ -397,9 +414,9 @@
 							success: function(res) {
 								if(res.code == 0) {
 									if(res.data.rows && res.data.rows.length != 0) {
+										selId=res.data.rows[0].productTypeId
 										$('.tabtype3').attr('href', 'product.html?id=' + res.data.rows[0].productTypeId)
 										for(var i in res.data.rows) {
-
 											//										$('.ylqx').append('<a href="product.html?id=' + res.data.rows[i].productTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
 											$('.anlizhongxin').append("<li><a class='' href='product.html?id=" + res.data.rows[i].productTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 										}
@@ -423,14 +440,14 @@
 					console.log(res, res.code)
 					if(res.code == 0) {
 						$('.tabtype1').html(res.data.rows[0].name)
-						$('.xwzx h1').html(res.data.rows[0].name)
+						//						$('.xwzx h1').html(res.data.rows[0].name)
 						$('.tabtype2').html(res.data.rows[1].name)
 
 						for(var i in res.data.rows) {
-							var id = res.data.rows[i].articleTypeId
-							var name = res.data.rows[i].name
-//							detailList(id, name)
-
+//							var id = res.data.rows[i].articleTypeId
+//							var name = res.data.rows[i].name~!
+							//							detailList(id, name)
+							var typeId=res.data.rows[i].articleTypeId
 							if(i == 0) {
 								$('.ylqx').append('<a href="javascript:;" type="1" id="' + res.data.rows[i].articleTypeId + '" keyName="' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
 								$.ajax({
@@ -444,9 +461,11 @@
 											if(res.data.rows && res.data.rows.length != 0) {
 												$('.tabtype1').attr('href', 'article.html?id=' + res.data.rows[0].articleTypeId)
 												for(var i in res.data.rows) {
-													$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+													//													$('.xwzx').append('<a href="article.html?id=' + res.data.rows[i].articleTypeId + '&keyName=' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
 													$('.xwanli').append("<li><a class='' href='article.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 												}
+											}else{
+												$('.tabtype1').attr('href', 'article.html?ids=' + typeId)
 											}
 										} else {
 											alert(res.codeMsg)
@@ -454,6 +473,7 @@
 									}
 								})
 							} else if(i == 1) {
+								
 								$('.ylqx').append('<a href="javascript:;" type="2" id="' + res.data.rows[i].articleTypeId + '" keyName="' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
 								$.ajax({
 									url: '/article-types',
@@ -468,35 +488,45 @@
 												for(var i in res.data.rows) {
 													$('.qxfenlei').append("<li><a class='' href='album.html=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 												}
+											}else{
+												$('.tabtype2').attr('href', 'album.html?ids=' + typeId)
 											}
 										} else {
 											alert(res.codeMsg)
 										}
 									}
 								})
-							}else{
-								$('.xwzx').append('<a href="javascript:;" type="2" id="' + res.data.rows[i].articleTypeId + '" keyName="' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
-//								$('.ylqx').append('<a href="javascript:;" type="2" id="' + res.data.rows[i].articleTypeId + '" keyName="' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
-								$.ajax({
-									url: '/article-types',
-									type: 'get',
-									data: "articleTypeUpperId=" + res.data.rows[i].articleTypeId,
-									async: false,
-									ContentType: 'application/x-www-form-urlencoded',
-									success: function(res) {
-										if(res.code == 0) {
-											if(res.data.rows && res.data.rows.length != 0) {
-												$('.tabtype2').attr('href', 'album.html?id=' + res.data.rows[0].articleTypeId)
-												for(var i in res.data.rows) {
-													$('.qxfenlei').append("<li><a class='' href='album.html=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
-												}
-											}
-										} else {
-											alert(res.codeMsg)
-										}
-									}
-								})
-								
+							} else {
+								if(i == 2) {
+									selIds=typeId
+									console.log(selIds)
+									$('.xwzx').append('<a class="select" href="javascript:;" type="2"  id="' + res.data.rows[i].articleTypeId + '" keyName="' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')						
+									detailList(res.data.rows[i].articleTypeId, res.data.rows[i].name, 4)
+								} else {
+									$('.xwzx').append('<a  href="javascript:;" type="2"  id="' + res.data.rows[i].articleTypeId + '" keyName="' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+								}
+
+								//								$('.ylqx').append('<a href="javascript:;" type="2" id="' + res.data.rows[i].articleTypeId + '" keyName="' + encodeURIComponent(res.data.rows[i].name) + '">' + res.data.rows[i].name + '</a>')
+//								$.ajax({
+//									url: '/article-types',
+//									type: 'get',
+//									data: "articleTypeUpperId=" + res.data.rows[i].articleTypeId,
+//									async: false,
+//									ContentType: 'application/x-www-form-urlencoded',
+//									success: function(res) {
+//										if(res.code == 0) {
+//											if(res.data.rows && res.data.rows.length != 0) {
+//												$('.tabtype2').attr('href', 'album.html?id=' + res.data.rows[0].articleTypeId)
+//												for(var i in res.data.rows) {
+//													$('.qxfenlei').append("<li><a class='' href='album.html=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+//												}
+//											}
+//										} else {
+//											alert(res.codeMsg)
+//										}
+//									}
+//								})
+
 							}
 						}
 					} else {
@@ -508,22 +538,32 @@
 			$('.searchThis').click(function() {
 				location.href = 'product.html?kw=' + $('#queryTxt').val()
 			})
-			
-			
-			$('body').on('click','.ylqx a',function(){
-				type=$(this).attr('type')
-				detailList($(this).attr('id'), $(this).html(),$(this).attr('type'))
+
+			$('body').on('click', '.ylqx a', function() {
+				type = $(this).attr('type')
+				selId=$(this).attr('id')
+				detailList($(this).attr('id'), $(this).html(), $(this).attr('type'))
 				$(this).addClass('select')
 				$(this).siblings().removeClass('select')
 			})
-			$('.rightMore').click(function(){
-				if(type==1){
-					location.href='article.html'
-				}else if(type==2){
-					location.href='album.html'
-				}else if(type==3){
-					location.href='product.html'
-				}	
+			console.log(selIds)
+			$('body').on('click', '.xwzx a', function() {				
+				selIds=$(this).attr('id')
+				$(this).addClass('select')
+				$(this).siblings().removeClass('select')
+				detailList(selIds, $(this).html(), 4)
+			})
+			$('.rightMore1').click(function() {
+				if(type == 1) {
+					location.href = 'article.html?id='+selId
+				} else if(type == 2) {
+					location.href = 'album.html?id='+selId
+				} else if(type == 3) {
+					location.href = 'product.html?id='+selId
+				}
+			})
+			$('.rightMore2').click(function() {
+				location.href = 'articleMore.html?ids='+selIds
 			})
 		</script>
 		<script type="text/javascript">
