@@ -119,6 +119,7 @@ function utf16to8(str) {
 }
 
 function type() {
+	debugger
 	$.ajax({
 		url: '/article-types',
 		type: 'get',

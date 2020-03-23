@@ -96,7 +96,6 @@
 									<li style="display: none;">
 										<a class='' href='article.html'>公司新闻</a>
 									</li>
-
 								</ul>
 							</li>
 
@@ -310,6 +309,7 @@
 			}
 
 			function detailList(ids, name, type) {
+				debugger
 				if(type == 3) {
 					$.ajax({
 						url: '/products',
@@ -486,7 +486,8 @@
 											if(res.data.rows && res.data.rows.length != 0) {
 												$('.tabtype2').attr('href', 'album.html?id=' + res.data.rows[0].articleTypeId)
 												for(var i in res.data.rows) {
-													$('.qxfenlei').append("<li><a class='' href='album.html=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+													debugger
+													$('.qxfenlei').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 												}
 											}else{
 												$('.tabtype2').attr('href', 'album.html?ids=' + typeId)
@@ -518,7 +519,7 @@
 //											if(res.data.rows && res.data.rows.length != 0) {
 //												$('.tabtype2').attr('href', 'album.html?id=' + res.data.rows[0].articleTypeId)
 //												for(var i in res.data.rows) {
-//													$('.qxfenlei').append("<li><a class='' href='album.html=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+//													$('.qxfenlei').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 //												}
 //											}
 //										} else {

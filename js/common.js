@@ -119,6 +119,7 @@ function utf16to8(str) {
 }
 
 function type() {
+	debugger
 	$.ajax({
 		url: '/article-types',
 		type: 'get',
@@ -171,7 +172,7 @@ function type() {
 									if(res.data.rows && res.data.rows.length != 0) {
 										$('.tabtype2').attr('href', 'album.html?id=' + res.data.rows[0].articleTypeId)
 										for(var i in res.data.rows) {
-											$('.qxfenlei').append("<li><a class='' href='album.html=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
+											$('.qxfenlei').append("<li><a class='' href='album.html?id=" + res.data.rows[i].articleTypeId + "&keyName=" + encodeURIComponent(res.data.rows[i].name) + "'>" + res.data.rows[i].name + "</a></li>")
 										}
 									}else{
 										$('.tabtype2').attr('href', 'album.html?ids=' + typeId)
