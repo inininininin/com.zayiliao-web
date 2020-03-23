@@ -324,7 +324,7 @@
 								for(var i in res.data.rows) {
 									$('.list').append('<div class="col-xs-6 col-sm-3 col-md-2 col-mm-6 productImg">' +
 										'<a title="PRO-001" href="product_detail.html?id=' + res.data.rows[i].productId +'&keyName='+(res.data.rows[i].productType2Name||"")+ '">' +
-										'<span class="imgLink-hover lineTen padding_10">' + res.data.rows[i].intro + '</span>' +
+										'<span class="imgLink-hover lineTen padding_10">' + (res.data.rows[i].intro||'') + '</span>' +
 										'<img src="' + res.data.rows[i].cover + '" alt="" />' +
 										'</a>' +
 										'<a class="productTitle" href="product_detail.html?id=' + res.data.rows[i].productId +'&keyName='+(res.data.rows[i].productType2Name||"")+ '" title="' + res.data.rows[i].name + '">' + res.data.rows[i].name + '</a>' +
@@ -375,7 +375,7 @@
 											'<div class="txt">' +
 											'<span class="title">' + res.data.rows[i].name + '</span>' +
 											'<span class="time">' + getLocalTime(res.data.rows[i].createTime / 1000) + '</span>' +
-											'<p>' + res.data.rows[i].intro + '</p>' +
+											'<p>' + (res.data.rows[i].intro||'') + '</p>' +
 											'</div>' +
 											'</a>' +
 											'</li>')
