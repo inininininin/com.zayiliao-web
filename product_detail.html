@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -197,6 +197,9 @@
 							<div class="detailTitleTxt">
 								详情
 							</div>
+							<video class="videoBox" src="" controls="controls">
+							您的浏览器不支持 video 标签。
+							</video>
 							<div class="detailContent" style="line-height:1.8em;">
 
 								<!--演示链接：<br />
@@ -212,7 +215,7 @@
 
 						<div class="otherPageBox">
 							<div class="col-xs-9 col-sm-9 col-md-9 pad">
-								<div class='otherPage'>
+								<div class="otherPage">
 									<div class='prevBox'></div>
 									<div class='nextBox'></div>
 								</div>
@@ -372,11 +375,14 @@ if(getQueryVariable('keyName')){
 					ContentType: 'application/x-www-form-urlencoded',
 					success: function(res) {
 						if(res.code == 0) {
+							if(res.data.data.video){
+								$('.videoBox').attr('src',res.data.data.video)
+							}
 							var cover = res.data.cover.split(',')
 							for(var i in cover) {
 								console.log(cover)
 								//								$('.detailNav').append("")
-								$('.productLb').append("<li data-responsive='' data-src='" + cover[i] + "' data-sub-html='' class='slider__item real'><a><img src='" + cover[i] + "'></a></li>")
+								$('.productLb').append("<li data-responsive='' data-src='" + cover[i] + "' data-sub-html='' class='slider__item real' style='height:150px'><a><img src='" + cover[i] + "'></a></li>")
 							}
 							console.log(res.data.content)
 							$('.detailParameter').html(res.data.intro)

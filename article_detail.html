@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -180,7 +180,9 @@
 						<div class="detailTime">
 
 						</div>
-
+<video class="videoBox" src="" controls="controls">
+							您的浏览器不支持 video 标签。
+							</video>
 						<div class="detailContent">
 
 							<!--<span style="color:#505050;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;">
@@ -361,8 +363,9 @@
 					ContentType: 'application/x-www-form-urlencoded',
 					success: function(res) {
 						if(res.code == 0) {
-							console.log(res.data.content)
-							$('.detailTitle').html(res.data.name)
+if(res.data.data.video){
+								$('.videoBox').attr('src',res.data.data.video)
+							}							$('.detailTitle').html(res.data.name)
 							$('.detailTime').html(getLocalTime(res.data.createTime / 1000))
 							if(res.data.prevArticle) {
 								$('.prevBox').html("上一个：<a href='article_detail.html?id=" + res.data.prevArticle.articleId + "&keyName="+(getQueryVariable('keyName')||"")+"' title='" + res.data.prevArticle.name + "'>" + res.data.prevArticle.name + "</a>")
