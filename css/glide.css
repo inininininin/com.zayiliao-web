@@ -23,10 +23,10 @@
     background-repeat: no-repeat;
     background-position: center center;
 	max-width:1920px;
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
+	background-size: contain;
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
     display: inline-block;
 }
 
