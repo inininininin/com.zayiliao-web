@@ -197,7 +197,7 @@
 							<div class="detailTitleTxt">
 								详情
 							</div>
-							<video class="videoBox" src="" controls="controls">
+							<video class="videoBox" src="" controls="controls" style="display:none;">
 							您的浏览器不支持 video 标签。
 							</video>
 							<div class="detailContent" style="line-height:1.8em;">
@@ -375,8 +375,8 @@ if(getQueryVariable('keyName')){
 					ContentType: 'application/x-www-form-urlencoded',
 					success: function(res) {
 						if(res.code == 0) {
-							if(res.data.data.video){
-								$('.videoBox').attr('src',res.data.data.video)
+							if(res.data.video){
+								$('.videoBox').attr('src',res.data.video).show()
 							}
 							var cover = res.data.cover.split(',')
 							for(var i in cover) {

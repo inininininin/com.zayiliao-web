@@ -180,7 +180,7 @@
 						<div class="detailTime">
 
 						</div>
-						<video class="videoBox" src="" controls="controls">
+						<video class="videoBox" src="" controls="controls" style="display:none;">
 						您的浏览器不支持 video 标签。
 						</video>
 						<div class="detailContent">
@@ -360,8 +360,8 @@
 					ContentType: 'application/x-www-form-urlencoded',
 					success: function(res) {
 						if(res.code == 0) {
-							if(res.data.data.video){
-								$('.videoBox').attr('src',res.data.data.video)
+							if(res.data.video){
+								$('.videoBox').attr('src',res.data.video).show()
 							}
 							$('.detailTitle').html(res.data.name)
 							$('.detailTime').html(getLocalTime(res.data.createTime / 1000))
