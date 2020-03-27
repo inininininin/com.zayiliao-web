@@ -337,11 +337,12 @@
 							'userQQ': oicq
 						},
 						success: function(res) {
-							if(res.code == 0) {
-
-							} else {
+							if(res.codeMsg)
 								alert(res.codeMsg)
-							}
+							if(res.code==0) {
+								if(!res.codeMsg)
+									alert("操作成功")
+							} 
 						}
 					});
 				}
