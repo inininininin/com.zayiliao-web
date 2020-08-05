@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -219,6 +219,10 @@
                         <ul id="firstpane">
                             <li><a class='' href='about.html'>公司简介</a></li>
                             <li><a class='selected' href='contact.html'>联系我们</a></li>
+							
+							<li>
+								<a href="comment.html">在线留言</a>
+							</li>
                         </ul>
                     </div>
                 </div>
@@ -243,8 +247,8 @@
         <div class="copyright">
             <p>
                 <a href="about.html">公司简介</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                <a href="article.html">新闻中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                <a href="product.html">产品中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <!-- <a href="article.html">新闻中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="product.html">产品中心</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
                 <a href="contact.html">联系我们</a>
             </p>
             <p class="showVersion"></p>
@@ -302,7 +306,7 @@
     }
     function addMapOverlay(){
       var markers = [
-        {content:"我的备注",title:"忠安医疗",imageOffset: {width:0,height:3},position:{lat:32.284197,lng:118.787932}}
+        {content:"",title:"忠安医疗",imageOffset: {width:0,height:3},position:{lat:32.284197,lng:118.787932}}
       ];
       for(var index = 0; index < markers.length; index++ ){
         var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);

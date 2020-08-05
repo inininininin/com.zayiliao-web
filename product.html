@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="applicable-device" content="pc,mobile" />
-		<title>产品中心</title>
+		<title>医疗器械</title>
 
 		<link href="css/bootstrap.css" rel="stylesheet" />
 		<link href="css/glide.css" rel="stylesheet" />
@@ -305,8 +305,8 @@
 			<div class="copyright">
 				<p>
 					<a href="about.html">公司简介</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-					<a href="article.html">新闻中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-					<a href="product.html">产品中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<!-- <a href="article.html">新闻中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="product.html">产品中心</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
 					<a href="contact.html">联系我们</a>
 				</p>
 				<p class="showVersion"></p>
@@ -509,6 +509,8 @@ $.ajax({
 			}
 			if(getQueryVariable('keyName')){
 				$('.xwname').html(decodeURIComponent(getQueryVariable('keyName')))
+			}else{
+				$('.xwname').html('医疗器械')
 			}
 			type()
 			$('#box').paging({

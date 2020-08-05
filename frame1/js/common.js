@@ -1,4 +1,4 @@
-﻿function IsPC() {
+function IsPC() {
 	var userAgentInfo = navigator.userAgent;
 	var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
 	var flag = true;
@@ -245,14 +245,14 @@ function ads(banner) {
 			console.log(res, res.code)
 			if(res.code == 0) {
 				for(var i in res.data.rows) {
-					if(banner == 1) {
-						$('.slider__wrapper').append('<li class="slider__item"><a target="_blank" title="' + res.data.rows[i].name + '" href="" style="background-image:url(' + res.data.rows[i].cover + ')"><img src="images/banner-1.png" alt="' + res.data.rows[i].name + '" /></a></li>')
+					if(banner == 1) {//target="_blank"
+						$('.slider__wrapper').append('<li class="slider__item"><a  title="' + res.data.rows[i].name + '" href="javascript:;" style="background-image:url(' + res.data.rows[i].cover + ')"><img src="images/banner-1.png" alt="' + res.data.rows[i].name + '" /></a></li>')
 
 					} else if(banner == 2) {
-						$('.slider__wrapper').append('<li class="slider__item"><a target="_blank" title="' + res.data.rows[i].name + '" href="" style="background-image:url(' + res.data.rows[i].cover + ')"><img src="images/banner-2.png" alt="' + res.data.rows[i].name + '" /></a></li>')
+						$('.slider__wrapper').append('<li class="slider__item"><a title="' + res.data.rows[i].name + '" href="javascript:;" style="background-image:url(' + res.data.rows[i].cover + ')"><img src="images/banner-2.png" alt="' + res.data.rows[i].name + '" /></a></li>')
 
 					} else {
-						$('.slider__wrapper').append('<li class="slider__item"><a target="_blank" title="' + res.data.rows[i].name + '" href="" style="background-image:url(' + res.data.rows[i].cover + ')"><img src="images/banner-3.png" alt="' + res.data.rows[i].name + '" /></a></li>')
+						$('.slider__wrapper').append('<li class="slider__item"><a title="' + res.data.rows[i].name + '" href="javascript:;" style="background-image:url(' + res.data.rows[i].cover + ')"><img src="images/banner-3.png" alt="' + res.data.rows[i].name + '" /></a></li>')
 
 					}
 				}

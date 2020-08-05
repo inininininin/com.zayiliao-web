@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -190,7 +190,8 @@
 											电话
 										</td>
 										<td align="left">
-											<input class="easyui-validatebox telVal" type="text" name="tel" data-options="" style="width:90%;" />
+											<input class="easyui-validatebox telVal"  onkeyup="value=value.replace(/[^\d]/g,'')"      
+       onblur="value=value.replace(/[^\d]/g,'')" type="tel" name="tel" data-options="" style="width:90%;" />
 										</td>
 									</tr>
 									<tr>
@@ -198,7 +199,7 @@
 											邮箱
 										</td>
 										<td align="left">
-											<input class="easyui-validatebox emailVal" type="text" name="email" data-options="validType:'email'" style="width:90%;" />
+											<input class="easyui-validatebox emailVal" type="email" name="email" data-options="validType:'email'" style="width:90%;" />
 										</td>
 									</tr>
 									<tr>
@@ -206,7 +207,8 @@
 											QQ
 										</td>
 										<td align="left">
-											<input class="easyui-validatebox oicqVal" type="text" name="qq" data-options="" style="width:90%;" />
+											<input onkeyup="value=value.replace(/[^\d]/g,'')"      
+       onblur="value=value.replace(/[^\d]/g,'')" class="easyui-validatebox oicqVal" type="tel" name="qq" data-options="" style="width:90%;" />
 										</td>
 									</tr>
 									<!--<tr>
@@ -258,6 +260,10 @@
 								<li>
 									<a class='' href='contact.html'>联系我们</a>
 								</li>
+								
+								<li >
+									<a  class='selected' href="comment.html">在线留言</a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -282,8 +288,6 @@
 			<div class="copyright">
 				<p>
 					<a href="about.html">公司简介</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-					<a href="article.html">新闻中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-					<a href="product.html">产品中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 					<a href="contact.html">联系我们</a>
 				</p>
 				<p class="showVersion"></p>
